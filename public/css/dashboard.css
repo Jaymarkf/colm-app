@@ -1,0 +1,19 @@
+.container-slick img{
+    width:100%;
+}
+.main-banner{
+    width:100%;
+    overflow: hidden;
+}
+.slick-prev,.slick-next{
+    z-index: 1 !important;
+}
+.slick-next{
+    right:calc(100% - 96vw) !important;
+}
+.slick-prev{
+    left:20px !important;
+}
+.slick-next::before,.slick-prev::before{
+    font-size:4vw !important;
+}
