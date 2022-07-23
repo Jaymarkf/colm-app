@@ -9,7 +9,7 @@
     z-index: 1 !important;
 }
 .slick-next{
-    right:65px !important;
+    right:calc(100% - 96vw) !important;
 }
 .slick-prev{
     left:20px !important;
