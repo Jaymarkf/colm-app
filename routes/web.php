@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    $files = Storage::files('public/images');
+    $arr = array();
+    foreach($files as $val){
+        if(str_contains($val,'banner')){
+            $arr[] = str_replace("public/images/","storage/images/",$val);
+        }
+    }
+    return view('dashboard',['banner_images'=>$arr]);
+});
+
+
+Route::get('colm-admin',function(){
+    return view('colm-admin');
 });
