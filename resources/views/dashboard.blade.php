@@ -22,28 +22,23 @@
 <body>
 
 
-
 @include('sections/header')
 <div class="main-banner">
     <div class="container-slick">
+      @foreach($banner_images as $img)
         <div class="slicked">
-          <img src="{{asset('storage/images/cat.webp')}}" data-src="{{asset('storage/images/cat.webp')}}" 
+          <img src="{{asset($img)}}" data-src="{{asset($img)}}" 
           data-srcset="
-          {{asset('storage/images/rabit.webp')}} 300w,
-          {{asset('storage/images/rabit.webp')}} 600w,
-          {{asset('storage/images/rabit.webp')}} 900w,
+          {{asset($img)}} 300w,
+          {{asset($img)}} 600w,
+          {{asset($img)}} 900w,
           " class="lazyload" data-sizes="auto" alt="">
+          <div class="cbanner-blurb">
+              <a href="#">Lorem Ipsum</a>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore illo deserunt est fuga corrupti,</p>
+          </div>
         </div>
-        <div class="slicked">
-          <img src="{{asset('storage/images/cat.webp')}}" data-src="{{asset('storage/images/cat.webp')}}" 
-          data-srcset="
-          {{asset('storage/images/cat.webp')}} 300w,
-          {{asset('storage/images/cat.webp')}} 600w,
-          {{asset('storage/images/cat.webp')}} 900w,
-
-          " 
-          class="lazyload" alt="">
-        </div>
+      @endforeach
     </div>
 </div>
 </body>

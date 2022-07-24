@@ -18,7 +18,13 @@ require('laravel-mix-purgecss');
          require('postcss-import'),
          require('tailwindcss'),
      ]
- }).purgeCss({
+ }).sass('resources/sass/colm-admin.scss','public/css')
+ .options({
+    postCss: [
+        require('postcss-import'),
+        require('tailwindcss'),
+    ]
+}).purgeCss({
     enabled: mix.inProduction(),
     folders: ['src', 'templates'],
     extensions: ['html', 'js', 'php', 'vue'],

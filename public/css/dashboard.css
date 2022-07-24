@@ -5,6 +5,29 @@
     width:100%;
     overflow: hidden;
 }
+.cbanner-blurb{
+    width: 50%;
+    position: absolute;
+    text-align: center;
+    height: 40%;
+    background-color: #084125c4;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.cbanner-blurb a{
+    color:white;
+    background-color:black;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+.cbanner-blurb p{
+    color:white;
+    max-width:80%;
+}
 .slick-prev,.slick-next{
     z-index: 1 !important;
 }
@@ -16,4 +39,11 @@
 }
 .slick-next::before,.slick-prev::before{
     font-size:4vw !important;
+}
+.slicked{
+    position:relative;
+    display:flex !important;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
 }
