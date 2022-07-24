@@ -33,7 +33,7 @@
           {{asset($img)}} 600w,
           {{asset($img)}} 900w,
           " class="lazyload" data-sizes="auto" alt="">
-          <div class="cbanner-blurb">
+          <div class="cbanner-blurb md:absolute md:w-2/4">
               <a href="#">Lorem Ipsum</a>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore illo deserunt est fuga corrupti,</p>
           </div>
