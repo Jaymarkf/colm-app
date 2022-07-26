@@ -8,6 +8,8 @@
     <link href="{{ mix('/css/colm-admin.css') }}" rel="stylesheet">
     <meta name="description" content="ADMIN - COLM">
     <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="{{asset('storage/images/logo.webp')}}">
+
     <style>
         body,html{
             margin:0;
@@ -30,7 +32,7 @@
     </style>
 </head>
 <body>
-        <div class="container w-full h-full flex items-center justify-center">
+        <div class="container mx-auto w-full h-full flex items-center justify-center">
                 <div class="container-form w-2/4 flex items-center justify-center flex-col">
                     <div class="container-logo-img mb-10">
                     <img src="{{asset('storage/images/logo.webp')}}" data-src="{{asset('storage/images/logo.webp')}}" 
@@ -40,10 +42,12 @@
                                 {{asset('storage/images/logo.webp')}} 900w,
                                 " class="lazyload" data-sizes="auto" alt="">
                     </div>
-                    <form action="#" method="POST" class="flex flex-col items-center justify-center w-full">
+                    <form action="login-colm-admin" method="POST" class="flex flex-col items-center justify-center w-full">
                         @csrf
                         <input type="text" name="username" placeholder="Username"  class="admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
+                        <!-- <small class="mb-2 text-red-400">error</small> -->
                         <input type="password" name="password" placeholder="Password"  class="admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
+                        <!-- <small class="mb-2 text-red-400">error</small> -->
                         <button type="submit" class="admin-input w-full bg-gray-200 font-bold py-2 rounded-md hover:bg-lime-500 hover:text-white cursor-not-allowed" disabled>Log in</button>
                     </form>
                 </div>
