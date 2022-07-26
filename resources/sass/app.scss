@@ -26,11 +26,6 @@ header.mheader h1, header.mheader a,.hdropdown-desktop,.hdropdown{
     padding-left:14px;
     padding-right:14px;
 }
-@media(min-width:767px){
-    .hm-content{
-        display:none !important;
-    }
-}
 .caret-up{
     transform:rotate(180deg);
 }
