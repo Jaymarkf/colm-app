@@ -103,7 +103,7 @@
                    <a href="#" class="mt-2  hover:text-emerald-600 font-bold 2xl:text-xl bg-emerald-800 text-white py-1 px-2 w-40 p-2 rounded-md hover:bg-lime-500 hover:text-white" style="color:white;">Enroll Now</a>
                 </li>
             </ul>
-            <div class="p-4 space-y-2 bg-emerald-800 rounded shadow block  self-end mr-4 mb-4 md:hidden hm">
+            <div class="p-4 space-y-2 bg-emerald-800 rounded shadow block  self-end mr-4 mb-4 md:hidden hm" style="z-index:1;">
                 <span class="block h-0.5 bg-gray-100 animate-pulse"></span>
                 <span class="block h-0.5 bg-gray-100 animate-pulse"></span>
                 <span class="block h-0.5 bg-gray-100 animate-pulse"></span>
