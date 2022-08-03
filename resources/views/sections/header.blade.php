@@ -3,7 +3,7 @@
         <img class="xl:w-4/5 2xl:w-full 2xl:m-0 w-36" loading="lazy" src="{{asset('storage/images/logo.webp')}}" alt="main_logo">
     </div>
     <div class="flex flex-col justify-center items-center text-center sm:pl-2 w-full  md:justify-between md:flex-row">
-            <h1 class="font-bold mb-4 md:mb-0 text-xl text-center xl:text-base sm:font-bold 2xl:text-2xl">COLLEGE OF OUR LADY OF MERCY OF <br class="block md:hidden"> PULILAN FOUNDATION, INC.</h1>
+            <h1 class="font-bold mb-4 md:mb-0 text-xl text-center xl:text-base sm:font-bold 2xl:text-2xl" style="font-family:'Copperplate Gothic Bold'">COLLEGE OF OUR LADY OF MERCY OF <br class="block md:hidden"> PULILAN FOUNDATION, INC.</h1>
             <ul class="flex items-center">
                 <div class="flex flex-col items-center">
                     <ul class="hidden md:flex items-center justify-evenly w-full mb-5">
@@ -166,8 +166,8 @@
                 <li class="my-4">
                     <a href="#" class="text-lg font-bold hover:text-emerald-600">Enroll Now</a>
                 </li>
-                <ul>
-                <ul class="flex md:hidden items-center justify-evenly w-full mb-5">
+            <ul>
+            <ul class="flex md:hidden items-center justify-evenly w-full mb-5">
                         <li>
                         <img src="{{asset('storage/images/deped.webp')}}" data-src="{{asset('storage/images/deped.webp')}}" 
                             data-srcset="
@@ -201,7 +201,6 @@
                                 " class="lazyload w-14" data-sizes="auto" alt="">
                         </li>
                     </ul>
-                </ul>
-            </ul >
+            </ul>
     </div>
 </header>

@@ -9,15 +9,12 @@
   <title>COLM</title>
   <link rel="icon" type="image/x-icon" href="{{asset('storage/images/logo.webp')}}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
   <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
   <noscript><link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css"></noscript>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" media="all" />
   <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js" defer></script>
-
- 
 </head>
 <body>
 
@@ -33,14 +30,17 @@
           {{asset($img)}} 600w,
           {{asset($img)}} 900w,
           " class="lazyload" data-sizes="auto" alt="">
-          <div class="cbanner-blurb md:absolute md:w-2/4">
-              <a href="#">Lorem Ipsum</a>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore illo deserunt est fuga corrupti,</p>
+          <div class="cbanner-blurb w-full md:absolute md:w-2/4">
+              <a href="#" class="xl:text-2xl">Lorem Ipsum</a>
+              <p class="xl:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore illo deserunt est fuga corrupti,</p>
           </div>
         </div>
       @endforeach
     </div>
 </div>
+@include('sections/event-calendar')
+@include('sections/news');
+
 </body>
 <script>
     $(document).ready(function(){
@@ -63,7 +63,7 @@
           dots: true,
           infinite: true,
           arrows:true,
-          autoplay: true,
+          autoplay: false,
           slidesToShow: 1,
           adaptiveHeight: true
         }); 
