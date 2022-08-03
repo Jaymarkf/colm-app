@@ -12,6 +12,7 @@ require('laravel-mix-purgecss');
  */
  // webpack.mix.js
  mix.js('resources/js/app.js', 'public/js')
+ .extract()
  .sass('resources/sass/app.scss', 'public/css')
  .options({
      postCss: [

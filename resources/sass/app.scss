@@ -6,6 +6,8 @@
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
+@font-face {font-family: "Copperplate Gothic Bold"; src: url("//db.onlinewebfonts.com/t/e3062d8da98d4c90af3ad8613ca226e7.eot"); src: url("//db.onlinewebfonts.com/t/e3062d8da98d4c90af3ad8613ca226e7.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/e3062d8da98d4c90af3ad8613ca226e7.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/e3062d8da98d4c90af3ad8613ca226e7.woff") format("woff"), url("//db.onlinewebfonts.com/t/e3062d8da98d4c90af3ad8613ca226e7.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/e3062d8da98d4c90af3ad8613ca226e7.svg#Copperplate Gothic Bold") format("svg"); }
+
 
 
 html,body{
@@ -16,6 +18,9 @@ html,body{
 header.mheader h1, header.mheader a,.hdropdown-desktop,.hdropdown{
     color: rgb(107 114 128);
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header .mheader h1{
+    font-family:"Copperplate Gothic Bold";
 }
 .hm span{
     width:20px;
@@ -58,3 +63,148 @@ header.mheader h1, header.mheader a,.hdropdown-desktop,.hdropdown{
     font-weight: normal;
 }
 /* end of header*/
+
+/*event calendar section */
+.event-calendar-container{
+        background-color: #065f46;
+        @media(max-width:876px){
+            flex-direction:column;
+            .col-event{
+                width:100%;
+            }
+
+            .col-event-calendar .table-calendar .table-content .content-table p.day_block{
+                width:13vw;
+            }
+        }
+        @media(max-width:500px){
+            .col-event-calendar .table-calendar .table-content .content-table p.day_block{
+                height:55px;
+                font-size:12px;
+            }  
+            .table-calendar .table-content .content-table{
+                padding:10px !important;
+            }
+        }
+    .evt-content{
+        max-width:calc(334px * 3);
+        margin:50px auto;
+        justify-content: center;
+    }
+    .box-evt{
+        width:calc((100%  / 3) - 1.875rem );
+        @media(max-width:500px){
+            width:calc((100% / 2) - 28px);
+        }
+        height:180px;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        border-radius: 12px;
+    }
+    .table-calendar{
+        .table-content{
+            .content-table{
+                margin-top:10px;
+                padding:25px;
+                border:1px solid gray;
+                  p.day_block{
+                        border: 1px solid black;
+                        height: 76px;
+                        max-width: 100px;
+                        width: 5vw;
+                        padding-top:4px;
+                        padding-left:4px;                        
+                    }
+                ._table{
+
+                    .calendar-row{
+                        display:flex;
+                        align-items:center;
+                        justify-content: center;
+                    }
+                    .calendar-header p.day_block{
+                        align-items: center;
+                        padding:0;
+                        display:flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+h3.coa{
+    font-size:32px;
+}
+i.fa-thumbtack{
+font-size:21px;
+}
+h3.month-year{
+    font-size:21px;
+}
+.sy{
+    font-size:26px;
+}
+.calendar-row p.day_block{
+    text-align: left;
+}
+
+.col-event-calendar{
+    @media(max-width:1540px){
+        width:60%;
+        .table-calendar .table-content .content-table p.day_block{
+            width:7vw;
+        }
+
+    }
+}
+/* end of event calendar section */
+
+/*news section */
+.container-news{
+    @media(max-width:768px){
+        flex-direction:column;       
+    }
+    .col-news{
+        @media(max-width:768px){
+           width:75%;     
+        }
+        .banner-news{
+            img{
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+            }
+        }
+        .news-header{
+            h2{   
+                color: #065f46;
+                font-weight: bold;
+                font-size: 22px;
+                margin: 10px 0px; 
+            }
+        }
+        .news-content{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-action{
+            align-self:flex-start;
+            a{
+                background-color: yellow;
+                padding: 10px 30px;
+                display: block;
+                position: relative;
+                font-weight: bold;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+            @media(max-width:768px){
+                margin:10px 0px;  
+              }
+        }
+    }
+}
+/* end of news section*/
