@@ -103,6 +103,41 @@
                    <a href="#" class="mt-2  hover:text-emerald-600 font-bold 2xl:text-xl bg-emerald-800 text-white py-1 px-2 w-40 p-2 rounded-md hover:bg-lime-500 hover:text-white" style="color:white;">Enroll Now</a>
                 </li>
             </ul>
+            <ul class="flex md:hidden items-center justify-evenly w-full mb-5">
+                        <li>
+                        <img src="{{asset('storage/images/deped.webp')}}" data-src="{{asset('storage/images/deped.webp')}}" 
+                            data-srcset="
+                            {{asset('storage/images/deped.webp')}} 300w,
+                            {{asset('storage/images/deped.webp')}} 600w,
+                            {{asset('storage/images/deped.webp')}} 900w,
+                            " class="lazyload w-28" data-sizes="auto" alt="">
+                        </li>
+                        <li>
+                        <img src="{{asset('storage/images/up.webp')}}" data-src="{{asset('storage/images/up.webp')}}" 
+                            data-srcset="
+                            {{asset('storage/images/up.webp')}} 300w,
+                            {{asset('storage/images/up.webp')}} 600w,
+                            {{asset('storage/images/up.webp')}} 900w,
+                            " class="lazyload w-14" data-sizes="auto" alt="">
+                        </li>
+                        <li>
+                        <img src="{{asset('storage/images/ched.webp')}}" data-src="{{asset('storage/images/ched.webp')}}" 
+                            data-srcset="
+                            {{asset('storage/images/ched.webp')}} 300w,
+                            {{asset('storage/images/ched.webp')}} 600w,
+                            {{asset('storage/images/ched.webp')}} 900w,
+                            " class="lazyload w-14" data-sizes="auto" alt="">  
+                        </li>
+                        <li>
+                            <img src="{{asset('storage/images/tesda.webp')}}" data-src="{{asset('storage/images/tesda.webp')}}" 
+                                data-srcset="
+                                {{asset('storage/images/tesda.webp')}} 300w,
+                                {{asset('storage/images/tesda.webp')}} 600w,
+                                {{asset('storage/images/tesda.webp')}} 900w,
+                                " class="lazyload w-14" data-sizes="auto" alt="">
+                        </li>
+                    </ul>
+            </ul>
             <div class="p-4 space-y-2 bg-emerald-800 rounded shadow block  self-end mr-4 mb-4 md:hidden hm" style="z-index:1;">
                 <span class="block h-0.5 bg-gray-100 animate-pulse"></span>
                 <span class="block h-0.5 bg-gray-100 animate-pulse"></span>
@@ -167,40 +202,6 @@
                     <a href="#" class="text-lg font-bold hover:text-emerald-600">Enroll Now</a>
                 </li>
             <ul>
-            <ul class="flex md:hidden items-center justify-evenly w-full mb-5">
-                        <li>
-                        <img src="{{asset('storage/images/deped.webp')}}" data-src="{{asset('storage/images/deped.webp')}}" 
-                            data-srcset="
-                            {{asset('storage/images/deped.webp')}} 300w,
-                            {{asset('storage/images/deped.webp')}} 600w,
-                            {{asset('storage/images/deped.webp')}} 900w,
-                            " class="lazyload w-28" data-sizes="auto" alt="">
-                        </li>
-                        <li>
-                        <img src="{{asset('storage/images/up.webp')}}" data-src="{{asset('storage/images/up.webp')}}" 
-                            data-srcset="
-                            {{asset('storage/images/up.webp')}} 300w,
-                            {{asset('storage/images/up.webp')}} 600w,
-                            {{asset('storage/images/up.webp')}} 900w,
-                            " class="lazyload w-14" data-sizes="auto" alt="">
-                        </li>
-                        <li>
-                        <img src="{{asset('storage/images/ched.webp')}}" data-src="{{asset('storage/images/ched.webp')}}" 
-                            data-srcset="
-                            {{asset('storage/images/ched.webp')}} 300w,
-                            {{asset('storage/images/ched.webp')}} 600w,
-                            {{asset('storage/images/ched.webp')}} 900w,
-                            " class="lazyload w-14" data-sizes="auto" alt="">  
-                        </li>
-                        <li>
-                            <img src="{{asset('storage/images/tesda.webp')}}" data-src="{{asset('storage/images/tesda.webp')}}" 
-                                data-srcset="
-                                {{asset('storage/images/tesda.webp')}} 300w,
-                                {{asset('storage/images/tesda.webp')}} 600w,
-                                {{asset('storage/images/tesda.webp')}} 900w,
-                                " class="lazyload w-14" data-sizes="auto" alt="">
-                        </li>
-                    </ul>
-            </ul>
+
     </div>
 </header>
