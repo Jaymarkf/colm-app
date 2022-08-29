@@ -33,8 +33,9 @@
 </head>
 <body>
         <div class="container mx-auto w-full h-full flex items-center justify-center">
-                <div class="container-form w-2/4 flex items-center justify-center flex-col">
-                    <div class="container-logo-img mb-10">
+               
+                <div class="container-form w-2/3 flex items-center justify-center flex-col">
+                    <div class="container-logo-img mb-2">
                     <img src="{{asset('storage/images/logo.webp')}}" data-src="{{asset('storage/images/logo.webp')}}" 
                                 data-srcset="
                                 {{asset('storage/images/logo.webp')}} 300w,
@@ -42,13 +43,16 @@
                                 {{asset('storage/images/logo.webp')}} 900w,
                                 " class="lazyload" data-sizes="auto" alt="">
                     </div>
+                    @if(Session::get('fail'))
+                    <span class="text-danger font-weight-bold text-center  text-sm text-red-500 mb-3">{{ Session::get('fail') }}</span>
+                    @endif
                     <form action="login-colm-admin" method="POST" class="flex flex-col items-center justify-center w-full">
                         @csrf
                         <input type="text" name="username" placeholder="Username"  class="admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
                         <!-- <small class="mb-2 text-red-400">error</small> -->
                         <input type="password" name="password" placeholder="Password"  class="admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
                         <!-- <small class="mb-2 text-red-400">error</small> -->
-                        <button type="submit" class="admin-input w-full bg-gray-200 font-bold py-2 rounded-md hover:bg-lime-500 hover:text-white cursor-not-allowed" disabled>Log in</button>
+                        <button type="submit" class="admin-input w-full bg-gray-200 font-bold py-2 rounded-md hover:bg-lime-500 hover:text-white">Log in</button>
                     </form>
                 </div>
         </div>
