@@ -10,26 +10,26 @@
     <link rel="icon" type="image/x-icon" href="{{asset('storage/images/logo.webp')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body class="bg-emerald-800">
+<body>
     @include('admin-dashboard/header')
     @include('admin-dashboard/mobile-nav')
     <main class="px-2 py-5">
     <form action="add_new_carousel" id="new_carousel_form" method="POST" enctype="multipart/form-data" class="mb-3">
         @csrf
-        <label for="files" class="text-center block bg-emerald-900 text-slate-200 w-40 mx-auto py-2 mb-3 pl-2">
+        <label for="files" class="text-center block bg-gray-600 text-slate-200 w-40 mx-auto py-2 mb-3 pl-2">
             Add New Carousel
             <input type="file" id="files" name="new_carousel" class="file" accept="image/png, image/jpeg, image/jpg, image/webp" style="width:1px;opacity:0;"required>
         </label>
         <span id="image_flag" class="text-center text-white"></span>
         <div class="flex items-center justify-center">
-        <span class="text-white px-2 py-1 rounded bg-gradient-to-t from-red-500 border border-red-600 mr-3" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
-        <button class="text-white px-2 py-1 rounded bg-gradient-to-t from-green-500 border border-lime-600 submit" type="submit"><i class="fa fa-save"></i> Save</button>
+        <span class="text-white px-2 py-1 rounded bg-red-600  mr-3" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
+        <button class="text-white px-2 py-1 rounded bg-green-600 submit" type="submit"><i class="fa fa-save"></i> Save</button>
         </div>
     </form>
     <form action="update_delete_carousel" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="container-add">
-            <button type="submit" class="bg-red-500 text-white px-2  py-1 rounded text-xs">
+            <button type="submit" class="bg-red-600 text-white px-2  py-1 rounded text-xs">
                 delete selected
             </button>
         </div>

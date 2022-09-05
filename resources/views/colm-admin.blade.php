@@ -20,9 +20,6 @@
         *{
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
-        body{
-            background-color:#024e28;
-        }
         .admin-input{
             max-width:15rem;
         }
@@ -48,9 +45,9 @@
                     @endif
                     <form action="login-colm-admin" method="POST" class="flex flex-col items-center justify-center w-full">
                         @csrf
-                        <input type="text" name="username" placeholder="Username"  class="admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
+                        <input type="text" name="username" placeholder="Username"  class="border border-gray-400 rounded-lg admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
                         <!-- <small class="mb-2 text-red-400">error</small> -->
-                        <input type="password" name="password" placeholder="Password"  class="admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
+                        <input type="password" name="password" placeholder="Password"  class="border border-gray-400 rounded-lg admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
                         <!-- <small class="mb-2 text-red-400">error</small> -->
                         <button type="submit" class="admin-input w-full bg-gray-200 font-bold py-2 rounded-md hover:bg-lime-500 hover:text-white">Log in</button>
                     </form>

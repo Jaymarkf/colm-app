@@ -23,6 +23,6 @@ class AdminServer extends Controller
     }
 
     function add_new_carousel(Request $request){
-        dd('todo');
+     
     }
 }
