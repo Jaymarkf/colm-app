@@ -14,26 +14,26 @@
     @include('admin-dashboard/header')
     @include('admin-dashboard/mobile-nav')
     <main class="px-2 py-5">
-    <form action="add_new_carousel" id="new_carousel_form" method="POST" enctype="multipart/form-data" class="mb-3">
+    <form action="/add_new_carousel" id="new_carousel_form" method="POST" enctype="multipart/form-data" class="mb-3">
         @csrf
-        <label for="files" class="text-center block bg-gray-600 text-slate-200 w-40 mx-auto py-2 mb-3 pl-2">
+        <label for="files" class="text-center block bg-white-600 text-slate-800 w-40 mx-auto py-2 mb-3 pl-2 border cursor-pointer hover:bg-slate-100">
             Add New Carousel
             <input type="file" id="files" name="new_carousel" class="file" accept="image/png, image/jpeg, image/jpg, image/webp" style="width:1px;opacity:0;"required>
         </label>
-        <span id="image_flag" class="text-center text-white"></span>
+        <span id="image_flag" class="text-center text-slate-800"></span>
         <div class="flex items-center justify-center">
-        <span class="text-white px-2 py-1 rounded bg-red-600  mr-3" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
-        <button class="text-white px-2 py-1 rounded bg-green-600 submit" type="submit"><i class="fa fa-save"></i> Save</button>
+        <span class="text-slate-800 px-2 py-1 rounded bg-gray-100 hover:bg-gray-200 mr-3 cursor-pointer" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
+        <button class="text-slate-800 px-2 py-1 rounded bg-green-100 hover:bg-green-200 border submit" type="submit"><i class="fa fa-save"></i> Save</button>
         </div>
     </form>
     <form action="update_delete_carousel" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="container-add">
-            <button type="submit" class="bg-red-600 text-white px-2  py-1 rounded text-xs">
+        <div class="container-add mb-3">
+            <button type="submit" class="bg-gray-400 hover:bg-gray-500  text-white px-2  py-1 rounded">
                 delete selected
             </button>
         </div>
-        <div class="container-carousel flex flex-wrap">
+        <div class="container-carousel flex flex-wrap justify-center">
             @foreach($banner_images as $key => $img)
                 <div class="col-img flex items-center justify-center flex-col relative m-1">
                     <img src="{{asset($img)}}" data-src="{{asset($img)}}" 
@@ -74,6 +74,4 @@ $(document).ready(function(){
    });
 });
 </script>
-
-
 </html>

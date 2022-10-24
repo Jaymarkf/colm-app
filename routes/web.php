@@ -43,15 +43,15 @@ Route::get('manage-carousel',function(){
     $arr = array();
     $data = array();
     foreach($files as $val){
-    if(str_contains($val,'banner')){
             $arr[] = str_replace("public/images/carousel/","storage/images/carousel/",$val);
-            $data[] =  str_replace("public/images/carousel/","banner-",$val);
-        }
+            $data[] =  str_replace("public/images/carousel/","",$val);
     }
     return view('admin-dashboard.pages.manage-carousel',['banner_images' => $arr,'banner_id' =>$data]);
 })->middleware('auth_admin');
 //post mnethod
 Route::any('add_new_carousel',[AdminServer::class,'add_new_carousel']);
+
+
 Route::any('login-colm-admin',[AdminServer::class,'login'])->name('colm-admin');
 Route::post('update_delete_carousel',function(){
     dd('todo');

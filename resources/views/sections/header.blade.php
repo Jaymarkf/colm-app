@@ -39,6 +39,22 @@
                                 {{asset('storage/images/tesda.webp')}} 900w,
                                 " class="lazyload w-14" data-sizes="auto" alt="">
                         </li>
+                        <li>
+                            <img src="{{asset('storage/images/pacu-logo.webp')}}" data-src="{{asset('storage/images/pacu-logo.webp')}}" 
+                                data-srcset="
+                                {{asset('storage/images/pacu-logo.webp')}} 300w,
+                                {{asset('storage/images/pacu-logo.webp')}} 600w,
+                                {{asset('storage/images/pacu-logo.webp')}} 900w,
+                                " class="lazyload w-14" data-sizes="auto" alt="">
+                        </li>
+                        <li>
+                            <img src="{{asset('storage/images/pacu1957.webp')}}" data-src="{{asset('storage/images/pacu1957.webp')}}" 
+                                data-srcset="
+                                {{asset('storage/images/pacu1957.webp')}} 300w,
+                                {{asset('storage/images/pacu1957.webp')}} 600w,
+                                {{asset('storage/images/pacu1957.webp')}} 900w,
+                                " class="lazyload w-14" data-sizes="auto" alt="">
+                        </li>
                     </ul>
                     <ul class="flex items-center hidden md:flex">
                         <li class="li-header w-24 2xl:w-40 relative">
@@ -134,6 +150,22 @@
                                 {{asset('storage/images/tesda.webp')}} 300w,
                                 {{asset('storage/images/tesda.webp')}} 600w,
                                 {{asset('storage/images/tesda.webp')}} 900w,
+                                " class="lazyload w-14" data-sizes="auto" alt="">
+                        </li>
+                        <li>
+                            <img src="{{asset('storage/images/pacu-logo.webp')}}" data-src="{{asset('storage/images/pacu-logo.webp')}}" 
+                                data-srcset="
+                                {{asset('storage/images/pacu-logo.webp')}} 300w,
+                                {{asset('storage/images/pacu-logo.webp')}} 600w,
+                                {{asset('storage/images/pacu-logo.webp')}} 900w,
+                                " class="lazyload w-14" data-sizes="auto" alt="">
+                        </li>
+                        <li>
+                            <img src="{{asset('storage/images/pacu1957.webp')}}" data-src="{{asset('storage/images/pacu1957.webp')}}" 
+                                data-srcset="
+                                {{asset('storage/images/pacu1957.webp')}} 300w,
+                                {{asset('storage/images/pacu1957.webp')}} 600w,
+                                {{asset('storage/images/pacu1957.webp')}} 900w,
                                 " class="lazyload w-14" data-sizes="auto" alt="">
                         </li>
                     </ul>

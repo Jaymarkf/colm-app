@@ -23,6 +23,13 @@ class AdminServer extends Controller
     }
 
     function add_new_carousel(Request $request){
-     
+       $image = $request->file("new_carousel");
+       $file_name = time().'_'.$image->getClientOriginalExtension();
+       //use intervention
+       $img = \Image::make($image);
+       //convert to webp
+       $img->encode('webp',1);
+       //save it as webp
+       $img->save(storage_path('app/public/images/carousel/'.$file_name . '.webp'));
     }
 }
