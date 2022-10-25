@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AdminLogin;
-
+use App\Models\CarouselBanner;
 class AdminServer extends Controller
 {
     function login(Request $request){
@@ -28,8 +28,14 @@ class AdminServer extends Controller
        //use intervention
        $img = \Image::make($image);
        //convert to webp
-       $img->encode('webp',1);
+       $img->encode('webp');
        //save it as webp
-       $img->save(storage_path('app/public/images/carousel/'.$file_name . '.webp'));
+       $img->save(storage_path('app/public/images/carousel/'.$file_name . '.webp'),9);
+       $carousel = new CarouselBanner();
+       $carousel->banner_name = "test";
+       $carousel->banner_link = "https://wew";
+       $carousel->banner_link_blurb	 ="hahah";
+       $carousel->banner_blurb ="ade wow";
+       $carousel->save();
     }
 }

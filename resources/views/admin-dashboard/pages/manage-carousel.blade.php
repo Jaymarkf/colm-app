@@ -21,6 +21,20 @@
             <input type="file" id="files" name="new_carousel" class="file" accept="image/png, image/jpeg, image/jpg, image/webp" style="width:1px;opacity:0;"required>
         </label>
         <span id="image_flag" class="text-center text-slate-800"></span>
+        <div class="container-blurbs text-center mb-4 p-3 border rounded w-full sm:w-430px" style="margin:0 auto 20px auto;">
+            <section class="button_caption_row flex items-center justify-center mb-3">
+                <input placeholder="Button caption" required name="button_caption" class="max-w-xs w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="button_caption" type="text">
+                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded ml-3 cursor-pointer hover:bg-gray-200">skip</span>
+            </section>
+            <section class="button_link_row flex  items-center justify-center mb-3">
+                <input placeholder="Button link url (input: # if not sure)" required name="button_caption" class="max-w-xs w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="button_caption" type="text">
+                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded ml-3 cursor-pointer hover:bg-gray-200">skip</span>
+            </section>
+            <section class="banner_blurb_row flex items-center justify-center flex-col">
+                <textarea  required name="banner_blurb" id="" cols="47" rows="10" placeholder="Banner context.." class="w-full xs:w-auto shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded mt-3 cursor-pointer hover:bg-gray-200">skip</span>
+            </section>
+        </div>
         <div class="flex items-center justify-center">
         <span class="text-slate-800 px-2 py-1 rounded bg-gray-100 hover:bg-gray-200 mr-3 cursor-pointer" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
         <button class="text-slate-800 px-2 py-1 rounded bg-green-100 hover:bg-green-200 border submit" type="submit"><i class="fa fa-save"></i> Save</button>
