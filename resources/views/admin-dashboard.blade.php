@@ -20,6 +20,7 @@
     <footer>    
 
     </footer>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 <script>
 $(document).ready(function(){

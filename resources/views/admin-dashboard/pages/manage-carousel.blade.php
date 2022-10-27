@@ -16,25 +16,11 @@
     <main class="px-2 py-5">
     <form action="/add_new_carousel" id="new_carousel_form" method="POST" enctype="multipart/form-data" class="mb-3">
         @csrf
-        <label for="files" class="text-center block bg-white-600 text-slate-800 w-40 mx-auto py-2 mb-3 pl-2 border cursor-pointer hover:bg-slate-100">
+        <label for="files" class="text-center block bg-white-600 text-slate-800 w-40 mx-auto py-2 mb-3 pl-2 border cursor-pointer hover:bg-slate-100 rounded-lg">
             Add New Carousel
             <input type="file" id="files" name="new_carousel" class="file" accept="image/png, image/jpeg, image/jpg, image/webp" style="width:1px;opacity:0;"required>
         </label>
         <span id="image_flag" class="text-center text-slate-800"></span>
-        <div class="container-blurbs text-center mb-4 p-3 border rounded w-full sm:w-430px" style="margin:0 auto 20px auto;">
-            <section class="button_caption_row flex items-center justify-center mb-3">
-                <input placeholder="Button caption" required name="button_caption" class="max-w-xs w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="button_caption" type="text">
-                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded ml-3 cursor-pointer hover:bg-gray-200">skip</span>
-            </section>
-            <section class="button_link_row flex  items-center justify-center mb-3">
-                <input placeholder="Button link url (input: # if not sure)" required name="button_caption" class="max-w-xs w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="button_caption" type="text">
-                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded ml-3 cursor-pointer hover:bg-gray-200">skip</span>
-            </section>
-            <section class="banner_blurb_row flex items-center justify-center flex-col">
-                <textarea  required name="banner_blurb" id="" cols="47" rows="10" placeholder="Banner context.." class="w-full xs:w-auto shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded mt-3 cursor-pointer hover:bg-gray-200">skip</span>
-            </section>
-        </div>
         <div class="flex items-center justify-center">
         <span class="text-slate-800 px-2 py-1 rounded bg-gray-100 hover:bg-gray-200 mr-3 cursor-pointer" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
         <button class="text-slate-800 px-2 py-1 rounded bg-green-100 hover:bg-green-200 border submit" type="submit"><i class="fa fa-save"></i> Save</button>
@@ -67,7 +53,6 @@
     </form>
     </main>
     <footer>    
-
     </footer>
 </body>
 <script>
@@ -81,11 +66,45 @@ $(document).ready(function(){
    $('.file').change(function(){
     let image = document.getElementById('files').files[0];
     $('#image_flag').html(image.name);
+    $(`  
+    <div class="container-blurbs text-center mb-4 p-3 border rounded w-full sm:w-430px" style="margin:0 auto 20px auto;">
+            <section class="button_caption_row flex items-center justify-center mb-3">
+                <input placeholder="Button caption" required name="button_caption" class="max-w-xs w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="button_caption" type="text">
+                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded ml-3 cursor-pointer hover:bg-gray-200" id="skip_button_caption" >skip</span>
+            </section>
+            <section class="button_link_row flex  items-center justify-center mb-3">
+                <input placeholder="Button link url" required name="button_link" class="max-w-xs w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="button_link" type="text">
+                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded ml-3 cursor-pointer hover:bg-gray-200" id="skip_button_link">skip</span>
+            </section>
+            <section class="banner_blurb_row flex items-center justify-center flex-col">
+                <textarea  required name="banner_blurb" id="banner_blurb" cols="47" rows="10" placeholder="Banner context.." class="w-full xs:w-auto shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                <span class="skip_btn bg-gray-400 px-2 py-1 text-white rounded mt-3 cursor-pointer hover:bg-gray-200" id="skip_banner_blurb">skip</span>
+            </section>
+        </div>`).insertAfter('#image_flag');
+
+        $('#skip_button_caption').click(function(){ 
+        $('#button_caption').attr('disabled','disabled'); 
+        $('#button_caption').css({'background-color':'#e9e9e9','cursor':'not-allowed'}); 
+        $('#button_caption').val(''); 
+        });
+
+        $('#skip_button_link').click(function(){ 
+        $('#button_link').attr('disabled','disabled'); 
+        $('#button_link').css({'background-color':'#e9e9e9','cursor':'not-allowed'}); 
+        $('#button_link').val(''); 
+         });
+
+        $('#skip_banner_blurb').click(function(){ 
+        $('#banner_blurb').attr('disabled','disabled'); 
+        $('#banner_blurb').css({'background-color':'#e9e9e9','cursor':'not-allowed'}); 
+        $('#banner_blurb').val(''); 
+        });
    });
    $('#cancel_new').click(function(){
     $('.file').val('');
     $('#image_flag').text('');
    });
+   
 });
 </script>
 </html>
