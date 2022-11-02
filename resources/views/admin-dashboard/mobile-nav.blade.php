@@ -8,7 +8,7 @@
         <div class="content-nav-mobile hidden md:hidden">
             <ul class="border">
                 <li class="text-gray-700 text-center py-2 font-bold" manage_carousel>
-                    <a href="manage-carousel">Manage Carousel</a>
+                    <a href="manage_carousel">Manage Carousel</a>
                 </li>
             </ul>
         </div>
