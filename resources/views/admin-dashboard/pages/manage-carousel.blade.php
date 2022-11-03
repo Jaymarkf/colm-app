@@ -7,7 +7,7 @@
     <title>ADMINISTRATOR COLM</title>
     <link href="{{ mix('/css/colm-admin.css') }}" rel="stylesheet">
     <meta name="description" content="ADMIN - COLM - MAIN">
-    <link rel="icon" type="image/x-icon" href="{{asset('storage/images/logo.png')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('storage/images/logo.webp')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
@@ -85,20 +85,20 @@
                             <div role="status">
                                 @include('svg/loading')
                                 <div edit_form_content class="hidden">
-                                        <img class="lazyload" src="" alt="image here..." id="blah">
+                                        <img class="lazyload medium:w-2/4 mx-auto" src="" alt="image here..." id="blah">
                                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Edit Banner</label>
-                                            <input required name="banner_file" class="p-3 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                            <input name="banner_file" class="e_input p-3 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
                                         <div class="mb-6">
                                             <label for="banner_link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner link</label>
-                                            <input name="banner_link" type="text" id="banner_link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                            <input name="banner_link" type="text" id="banner_link" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         </div>
                                         <div class="mb-6">
                                             <label for="banner_context" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner Context</label>
-                                            <input name="banner_context" type="text" id="banner_context" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                            <input name="banner_context" type="text" id="banner_context" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         </div>
                                         <div class="mb-6">
                                             <label for="button_caption" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Button Caption</label>
-                                            <input name="button_caption" type="text" id="button_caption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                            <input name="button_caption" type="text" id="button_caption" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         </div>
                                 </div>
                             </div>
@@ -119,3 +119,16 @@
 <script type="text/javascript" src="{{asset('js/custom-script.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/manage-carousel.js')}}"></script>
 </html>
+<style>
+    @media(max-width:499px){
+        #defaultModal div:first-child{
+            max-width:23rem;
+        }
+        .e_input{
+            padding: 5px 9px;
+        }
+        [edit_form_content] .mb-6{
+            margin-bottom:0.2rem;
+        }
+    }
+</style>

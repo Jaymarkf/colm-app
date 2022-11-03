@@ -375,6 +375,9 @@ video {
 }@media (min-width: 425px) {.container {
     max-width: 425px;
   }
+}@media (min-width: 500px) {.container {
+    max-width: 500px;
+  }
 }@media (min-width: 640px) {.container {
     max-width: 640px;
   }
@@ -6441,5 +6444,8 @@ readers do not read off random characters that represent icons */.fa-0::before {
   }.\32xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}@media (min-width: 500px) {.medium\:w-2\/4 {
+    width: 50%;
   }
 }
