@@ -22,20 +22,22 @@
 @include('sections/header')
 <div class="main-banner">
     <div class="container-slick">
-      @foreach($banner_context['banner_image'] as $img)
-         <div class="slicked">
-          <img src="{{$img}}" data-src="{{$img}}" 
-          data-srcset="
-          {{$img}} 300w,
-          {{$img}} 600w,
-          {{$img}} 900w,
-          " class="lazyload" data-sizes="auto" alt="">
-          <div class="cbanner-blurb w-full md:absolute md:w-2/4">
-              <a href="#" class="xl:text-2xl">Lorem Ipsum</a>
-              <p class="xl:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore illo deserunt est fuga corrupti,</p>
+      @if(count($banner_context))
+        @foreach($banner_context['banner_image'] as $img)
+          <div class="slicked">
+            <img src="{{$img}}" data-src="{{$img}}" 
+            data-srcset="
+            {{$img}} 300w,
+            {{$img}} 600w,
+            {{$img}} 900w,
+            " class="lazyload" data-sizes="auto" alt="">
+            <div class="cbanner-blurb w-full md:absolute md:w-2/4">
+                <a href="#" class="xl:text-2xl">Lorem Ipsum</a>
+                <p class="xl:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore illo deserunt est fuga corrupti,</p>
+            </div>
           </div>
-        </div>
-      @endforeach
+        @endforeach
+      @endif
     </div>
 </div>
 @include('sections/event-calendar')

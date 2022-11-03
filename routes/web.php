@@ -32,6 +32,5 @@ Route::post('admin',[AdminServer::class,'edit_carousel'])->middleware('auth_admi
 Route::any('add_new_carousel',[AdminServer::class,'add_new_carousel']);
 
 Route::any('login-colm-admin',[AdminServer::class,'login'])->name('colm-admin');
-Route::post('update_delete_carousel',function(){
-    dd('todo');
-});
+
+Route::post('update_delete_carousel',[AdminServer::class,'update_delete_carousel'])->middleware('auth_admin');

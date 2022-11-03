@@ -20,16 +20,12 @@ class AdminServer extends Controller
         }
     }
     function add_new_carousel(Request $request){
-
-
-
        $imageExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd','webp'];
        $image = $request->file("new_carousel");
        $image_name = $image->getClientOriginalName();
        $allowedMimeTypes = ['image/jpeg','image/gif','image/png','image/bmp','image/webp'];
        $explodeImage = explode('.', $image_name);
        $extension = end($explodeImage);
-       $validator = null;
        if(in_array($extension , $imageExtensions) && in_array($image->getClientMimeType(), $allowedMimeTypes)){
             $file_name = time().'_'.$image->getClientOriginalExtension();
             //use intervention
@@ -78,9 +74,34 @@ class AdminServer extends Controller
         return view('admin-dashboard.pages.manage-carousel',['banner_images' => $banner]);
        }
     }
-
     function edit_carousel(Request $r){
        $sql = CarouselBanner::where('id','=',$r->banner_id)->get()->first();;
        return $sql;
+        
     }
+
+    function update_delete_carousel(Request $r){
+        
+    }
+    /**
+     * 
+     *  @param int $request request data
+     *  @param int $file_name the file to be check
+     *  @param int $mode 'UPDATE','ADD'
+     */
+    function CheckIfRealImage(Request $request,$file_name,$mode){
+        $imageExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd','webp'];
+        $image = $request->file($file_name);
+        $image_name = $image->getClientOriginalName();
+        $allowedMimeTypes = ['image/jpeg','image/gif','image/png','image/bmp','image/webp'];
+        $explodeImage = explode('.', $image_name);
+        $extension = end($explodeImage);
+        if(in_array($extension , $imageExtensions) && in_array($image->getClientMimeType(), $allowedMimeTypes)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 }

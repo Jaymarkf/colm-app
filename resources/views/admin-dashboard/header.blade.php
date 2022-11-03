@@ -1,5 +1,5 @@
 <header class="flex items-center flex-col border-b-2 pt-2 md:flex md:flex-row md:p-4">
-         <img class="xl:w-40 2xl:m-0 md:w-20 w-36"  loading="lazy" src="{{asset('storage/images/logo.webp')}}" alt="main_logo">
+         <img class="xl:w-40 2xl:m-0 md:w-20 w-36"  loading="lazy" src="{{asset('storage/images/logo.png')}}" alt="main_logo">
          <div class="title-content my-4 flex flex-col justify-end items-center">
            <h1 class="text-gray-700 font-bold md:ml-5">ADMIN PANEL</h1>
          </div>
