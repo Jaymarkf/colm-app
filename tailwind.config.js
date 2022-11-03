@@ -5,7 +5,14 @@ module.exports = {
     './resources/**/*.vue',
   ],
    theme: {
-     extend: {},
+     extend: {
+      width:{
+        '430px' : '430px'
+      },
+      screens:{
+        'xs': '425px'
+      }
+     }
    },
    variants: {
      extend: {},

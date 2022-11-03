@@ -17,22 +17,8 @@
     width: 50%;
     display: block;
     text-overflow: ellipsis;
-    overflow: hidden;
-    margin: 0 auto;
+    overflow: hidden;   
     margin-bottom:0.8rem;
-}
-.check{
-    width: 1.3em;
-    height: 1.3em;
-    background-color: white;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-}
-.check:checked {
-    background-color: lime;
+    margin-top:0.8rem;
+    text-align: left;
 }

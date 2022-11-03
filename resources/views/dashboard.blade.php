@@ -22,13 +22,13 @@
 @include('sections/header')
 <div class="main-banner">
     <div class="container-slick">
-      @foreach($banner_images as $img)
-        <div class="slicked">
-          <img src="{{asset($img)}}" data-src="{{asset($img)}}" 
+      @foreach($banner_context['banner_image'] as $img)
+         <div class="slicked">
+          <img src="{{$img}}" data-src="{{$img}}" 
           data-srcset="
-          {{asset($img)}} 300w,
-          {{asset($img)}} 600w,
-          {{asset($img)}} 900w,
+          {{$img}} 300w,
+          {{$img}} 600w,
+          {{$img}} 900w,
           " class="lazyload" data-sizes="auto" alt="">
           <div class="cbanner-blurb w-full md:absolute md:w-2/4">
               <a href="#" class="xl:text-2xl">Lorem Ipsum</a>

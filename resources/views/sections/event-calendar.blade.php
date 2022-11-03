@@ -30,21 +30,21 @@
         <h4 class="sy font-bold">S.Y. 2022 - 2023</h4>
         <div class="table-calendar">
             <div class="table-content flex flex-col items-center justify-center text-center">
-                    <div class="content-table ">
+                    <div class="content-table rounded-lg">
                         <i class="fa-solid fa-thumbtack"></i>
                         <h3 class="month-year">AUGUST 2022</h3>
                         <div class="_table flex flex-col items-center justify-center">
                             <div class="calendar-header flex items-center justify-center">
-                                <p class="day_block">SUN</p>
-                                <p class="day_block">MON</p>
-                                <p class="day_block">TUE</p>
-                                <p class="day_block">WED</p>
-                                <p class="day_block">THU</p>
-                                <p class="day_block">FRI</p>
-                                <p class="day_block">SAT</p>
+                                <p class="day_block rounded-tl-lg  text-sm">SUN</p>
+                                <p class="day_block text-sm">MON</p>
+                                <p class="day_block text-sm">TUE</p>
+                                <p class="day_block text-sm">WED</p>
+                                <p class="day_block text-sm">THU</p>
+                                <p class="day_block text-sm">FRI</p>
+                                <p class="day_block text-sm rounded-tr-lg">SAT</p>
                             </div>
                             <div class="calendar-row">
-                                <p class="day_block">_</p>
+                                <p class="day_block bg-slate-100">31</p>
                                 <p class="day_block">1</p>
                                 <p class="day_block">2</p>
                                 <p class="day_block">3</p>
@@ -82,13 +82,13 @@
                                 <p class="day_block">27</p>
                             </div>
                             <div class="calendar-row">
-                                <p class="day_block">28</p>
+                                <p class="day_block rounded-bl-lg">28</p>
                                 <p class="day_block">29</p>
                                 <p class="day_block">30</p>
                                 <p class="day_block">31</p>
-                                <p class="day_block">1</p>
-                                <p class="day_block">2</p>
-                                <p class="day_block">3</p>
+                                <p class="day_block bg-slate-100">1</p>
+                                <p class="day_block bg-slate-100">2</p>
+                                <p class="day_block bg-slate-100 rounded-br-lg">3</p>
                             </div>
                         </div>
                     </div>

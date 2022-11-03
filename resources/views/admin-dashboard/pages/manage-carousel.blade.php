@@ -14,66 +14,107 @@
     @include('admin-dashboard/header')
     @include('admin-dashboard/mobile-nav')
     <main class="px-2 py-5">
-    <form action="add_new_carousel" id="new_carousel_form" method="POST" enctype="multipart/form-data" class="mb-3">
+    <form action="/add_new_carousel" id="new_carousel_form" method="POST" enctype="multipart/form-data" class="mb-3 lg:flex lg:flex-col lg:items-start">
         @csrf
-        <label for="files" class="text-center block bg-gray-600 text-slate-200 w-40 mx-auto py-2 mb-3 pl-2">
+        @if($errors->any())
+        <h4 class="bg-red-200 py-1 px-2 rounded border border-red-400 text-center w-full sm:w-430px" style="margin:0 auto 20px auto;">{{$errors->first()}}</h4>
+        @endif
+        @if (\Session::has('success'))
+            <div class="alert alert-success">
+                <ul>
+                    <li class="bg-green-200 py-1 px-2 rounded border text-center w-full sm:w-430px" style="margin:0 auto 20px auto;">{!! \Session::get('success') !!}</li>
+                </ul>
+            </div>
+        @endif
+       
+        <label for="files" class="text-center block bg-white-600 text-slate-800 w-40 py-2 mb-3 pl-2 border cursor-pointer hover:bg-slate-100 rounded-lg lg:m-0">
             Add New Carousel
-            <input type="file" id="files" name="new_carousel" class="file" accept="image/png, image/jpeg, image/jpg, image/webp" style="width:1px;opacity:0;"required>
+            <input type="file" id="files" name="new_carousel" class="file" accept="image/png, image/jpeg, image/jpg, image/webp" style="width:1px;opacity:0;" required>
         </label>
-        <span id="image_flag" class="text-center text-white"></span>
-        <div class="flex items-center justify-center">
-        <span class="text-white px-2 py-1 rounded bg-red-600  mr-3" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
-        <button class="text-white px-2 py-1 rounded bg-green-600 submit" type="submit"><i class="fa fa-save"></i> Save</button>
+        <span id="image_flag" class="text-center text-slate-800"></span>
+        <div class="flex items-center justify-start">
+        <span class="text-slate-800 px-2 py-1 rounded bg-gray-100 hover:bg-gray-200 mr-3 cursor-pointer" id="cancel_new"><i class="fa fa-close"></i> Cancel</span>
+        <button class="text-slate-800 px-2 py-1 rounded bg-green-100 hover:bg-green-200 border submit" type="submit"><i class="fa fa-save"></i> Save</button>
         </div>
     </form>
-    <form action="update_delete_carousel" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="container-add">
-            <button type="submit" class="bg-red-600 text-white px-2  py-1 rounded text-xs">
-                delete selected
-            </button>
-        </div>
-        <div class="container-carousel flex flex-wrap">
+        <div class="container-carousel flex flex-wrap justify-center border border-slate-400 rounded-lg py-2">
             @foreach($banner_images as $key => $img)
-                <div class="col-img flex items-center justify-center flex-col relative m-1">
-                    <img src="{{asset($img)}}" data-src="{{asset($img)}}" 
+            <br>
+                <div class="col-img flex items-center justify-center flex-col relative m-1 md:w-[32%] lg:w-1/5">
+                 
+                    <img src="{{asset('storage/images/carousel/'. $img->banner_name)}}" data-src="{{asset('storage/images/carousel/'. $img->banner_name)}}" 
                     data-srcset="
-                    {{asset($img)}} 300w,
-                    {{asset($img)}} 600w, 
-                    {{asset($img)}} 900w,
-                    " class="lazyload carousels" data-sizes="auto" alt="">
+                    {{asset('storage/images/carousel/'. $img->banner_name)}} 300w,
+                    {{asset('storage/images/carousel/'. $img->banner_name)}} 600w, 
+                    {{asset('storage/images/carousel/'. $img->banner_name)}} 900w,
+                    " class="lazyload carousels" data-sizes="auto" alt=""> 
                     <div class="img-blurb absolute w-full h-full flex flex-col justify-start items-start z-10 bg-gradient-to-t from-stone-900 p-2">
-                    <label for="{{'image-'.$key.'-id'}}">
-                        <input type="checkbox" id="{{$banner_id[$key]}}" name="avatar[]" value="" class="check">
-                    </label>
+                        <div class="row-action flex">
+                            <span class="bg-gray-500 px-3 py-1 rounded-lg cursor-pointer hover:bg-gray-400 mr-3 btn_edit" title="edit" data-modal-toggle="defaultModal" banner_id="{{$img->id}}">
+                                <i class="fa fa-edit text-white"></i>
+                            </span>
+                            <span class="bg-gray-500 px-3 py-1 rounded-lg cursor-pointer hover:bg-gray-400 btn_delete" title="delete">
+                                <i class="fa fa-trash text-red-300"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
-    </form>
     </main>
     <footer>    
-
-    </footer>
+        <!-- Main modal -->
+        <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            Edit Banner
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <form action="frm_ec" method="post" enctype="multipart/form-data">
+                    <div class="p-6 space-y-6">
+                        <div class="text-center" modal-content>
+                            <div role="status">
+                                @include('svg/loading')
+                                <div edit_form_content class="hidden">
+                                        
+                                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Edit Banner</label>
+                                            <input required class="p-3 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                            <span >
+                                                <i class="fa fa-close"></i>
+                                            </span>
+                                        <div class="mb-6">
+                                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner link</label>
+                                            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                        </div>
+                                        <div class="mb-6">
+                                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner Context</label>
+                                            <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                        <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="fa fa-save"></i> Save</button>
+                        <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"><i class="fa fa-close"></i> Cancel</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </footer>
+        
 </body>
-<script>
-$(document).ready(function(){
-   $('[hamburger]').click(function(){
-        $('.content-nav-mobile').slideToggle();
-   });
-   $('.nav-account').click(function(){
-    $('.nav-account-dropdown').slideToggle();
-   });
-   $('.file').change(function(){
-    let image = document.getElementById('files').files[0];
-    $('#image_flag').html(image.name);
-   });
-   $('#cancel_new').click(function(){
-    $('.file').val('');
-    $('#image_flag').text('');
-   });
-});
-</script>
-
-
+<script type="text/javascript" src="{{asset('js/custom-script.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/manage-carousel.js')}}"></script>
 </html>

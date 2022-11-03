@@ -14,12 +14,7 @@ require('laravel-mix-purgecss');
  mix.js('resources/js/app.js', 'public/js')
  .extract()
  .sass('resources/sass/app.scss', 'public/css')
- .options({
-     postCss: [
-         require('postcss-import'),
-         require('tailwindcss'),
-     ]
- }).sass('resources/sass/colm-admin.scss','public/css')
+ .sass('resources/sass/colm-admin.scss','public/css')
  .options({
     postCss: [
         require('postcss-import'),
