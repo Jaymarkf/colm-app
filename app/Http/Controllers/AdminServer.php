@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminLogin;
 use App\Models\CarouselBanner;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AdminServer extends Controller
 {
@@ -77,31 +79,62 @@ class AdminServer extends Controller
     function edit_carousel(Request $r){
        $sql = CarouselBanner::where('id','=',$r->banner_id)->get()->first();;
        return $sql;
-        
     }
 
-    function update_delete_carousel(Request $r){
-        
-    }
-    /**
-     * 
-     *  @param int $request request data
-     *  @param int $file_name the file to be check
-     *  @param int $mode 'UPDATE','ADD'
-     */
-    function CheckIfRealImage(Request $request,$file_name,$mode){
-        $imageExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd','webp'];
-        $image = $request->file($file_name);
-        $image_name = $image->getClientOriginalName();
-        $allowedMimeTypes = ['image/jpeg','image/gif','image/png','image/bmp','image/webp'];
-        $explodeImage = explode('.', $image_name);
-        $extension = end($explodeImage);
-        if(in_array($extension , $imageExtensions) && in_array($image->getClientMimeType(), $allowedMimeTypes)){
-            return true;
+    function update_delete_carousel(Request $request){
+        if($request->file()){
+            $imageExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd','webp'];
+            $image = $request->file("banner_file");
+            $image_name = $image->getClientOriginalName();
+            $allowedMimeTypes = ['image/jpeg','image/gif','image/png','image/bmp','image/webp'];
+            $explodeImage = explode('.', $image_name);
+            $extension = end($explodeImage);
+            if(in_array($extension , $imageExtensions) && in_array($image->getClientMimeType(), $allowedMimeTypes)){
+                //delete existing image file first
+                $temp = CarouselBanner::where('id' ,'=',$request->banner_ids)->get()->first();
+                $image_file = $temp->banner_name;
+                Storage::delete('/public/images/carousel/'.$image_file);
+
+                $file_name = time().'_'.$image->getClientOriginalExtension();
+                //use intervention
+                $img = \Image::make($image);
+                //convert to webp
+                $img->encode('webp');
+                //save it as webp
+                $img->save(storage_path('app/public/images/carousel/'.$file_name. '.webp'),80,'webp');
+
+            
+                        $button_blurb = $request->button_caption;
+                        $button_link = $request->banner_link;
+                        $banner_context = $request->banner_context;
+                        $update = ['banner_name' => $file_name . '.webp',
+                                'banner_link' => $button_link,
+                                'banner_link_blurb' => $button_blurb,
+                                'banner_blurb' => $banner_context
+                                ];
+
+                        $response = DB::table('carousel_banners')
+                            ->where('id', $request->banner_ids)
+                            ->update($update);
+                        return redirect()->back()->with('success', 'image was successfully edited!.');  
+                
+            }else{
+                return back()->withErrors(['msg' => 'file not accepted. please choose jpg/png/bmp/jpeg only.']);
+            }
         }else{
-            return false;
+            //save only blurb
+            $button_blurb = $request->button_caption;
+            $button_link = $request->banner_link;
+            $banner_context = $request->banner_context;
+            $update = ['banner_link' => $button_link,
+                       'banner_link_blurb' => $button_blurb,
+                       'banner_blurb' => $banner_context
+                      ];
+
+            DB::table('carousel_banners')
+                ->where('id', $request->banner_ids)
+                ->update($update);
+            return redirect()->back()->with('success', 'image was successfully edited!.');  
         }
     }
-
-
 }

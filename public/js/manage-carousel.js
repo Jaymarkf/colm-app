@@ -65,6 +65,7 @@ $(document).ready(function(){
                 $('#banner_link').val(msg.banner_link);
                 $('#banner_context').val(msg.banner_blurb);
                 $('#button_caption').val(msg.banner_link_blurb);
+                $('[e_banner]').val(msg.id);
            }
         });
     });

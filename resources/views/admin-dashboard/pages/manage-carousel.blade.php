@@ -79,41 +79,43 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <form action="update_delete_carousel" method="post" enctype="multipart/form-data">
-                    <div class="p-6 space-y-6">
-                        <div class="text-center" modal-content>
-                            <div role="status">
-                                @include('svg/loading')
-                                <div edit_form_content class="hidden">
-                                        <img class="lazyload medium:w-2/4 mx-auto" src="" alt="image here..." id="blah">
-                                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Edit Banner</label>
-                                            <input name="banner_file" class="e_input p-3 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
-                                        <div class="mb-6">
-                                            <label for="banner_link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner link</label>
-                                            <input name="banner_link" type="text" id="banner_link" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        </div>
-                                        <div class="mb-6">
-                                            <label for="banner_context" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner Context</label>
-                                            <input name="banner_context" type="text" id="banner_context" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        </div>
-                                        <div class="mb-6">
-                                            <label for="button_caption" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Button Caption</label>
-                                            <input name="button_caption" type="text" id="button_caption" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        </div>
+                    <form action="/update_delete_carousel" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="p-6 space-y-6">
+                            <div class="text-center" modal-content>
+                                <div role="status">
+                                    @include('svg/loading')
+                                    <div edit_form_content class="hidden">
+                                            <img class="lazyload w-auto mx-auto max-h-48" src="" alt="image here..." id="blah">
+                                            <input type="hidden" name="banner_ids" value="" e_banner>
+                                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Edit Banner</label>
+                                                <input name="banner_file" class="e_input p-3 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                            <div class="mb-6">
+                                                <label for="banner_link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner link</label>
+                                                <input name="banner_link" type="text" id="banner_link" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            </div>
+                                            <div class="mb-6">
+                                                <label for="banner_context" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Banner Context</label>
+                                                <input name="banner_context" type="text" id="banner_context" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            </div>
+                                            <div class="mb-6">
+                                                <label for="button_caption" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Button Caption</label>
+                                                <input name="button_caption" type="text" id="button_caption" class="e_input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="fa fa-save"></i> Save</button>
-                        <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"><i class="fa fa-close"></i> Cancel</button>
-                    </div>
+                        <!-- Modal footer -->
+                        <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="fa fa-save"></i> Save</button>
+                            <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"><i class="fa fa-close"></i> Cancel</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-        </footer>
+    </footer>
         
 </body>
 <script type="text/javascript" src="{{asset('js/custom-script.js')}}"></script>

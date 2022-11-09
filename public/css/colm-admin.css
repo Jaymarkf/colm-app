@@ -479,6 +479,8 @@ video {
   height: 2.5rem;
 }.h-5 {
   height: 1.25rem;
+}.max-h-48 {
+  max-height: 12rem;
 }.w-full {
   width: 100%;
 }.w-2\/3 {
@@ -507,6 +509,8 @@ video {
   width: 2.5rem;
 }.w-5 {
   width: 1.25rem;
+}.w-auto {
+  width: auto;
 }.max-w-2xl {
   max-width: 42rem;
 }@-webkit-keyframes pulse {50% {
