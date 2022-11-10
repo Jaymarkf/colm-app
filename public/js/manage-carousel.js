@@ -48,6 +48,8 @@ $(document).ready(function(){
     });
     
     $('.btn_edit').on('click',function(){
+        $('#loading').removeClass('hidden');
+        $('[edit_form_content]').addClass('hidden');
         $.ajax({
             url:'admin',
             method:'post',
@@ -80,3 +82,21 @@ $(document).ready(function(){
           blah.src = URL.createObjectURL(file)
         }
       }
+      $('[banner_delete_id]').on('click',function(){
+        if(confirm('are you sure you want to delete?')){
+            let banner_ids = $(this).attr('banner_delete_id');
+            $.ajax({
+                url:'admin/delete',
+                method:'post',
+                data:{ banner_ids : banner_ids },
+                headers: {
+                    "X-CSRF-Token": document.querySelector('input[name=_token]').value
+                }, 
+                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+                } 
+            }).done(function(msg){
+                location.reload(true);
+            });
+        }
+    });

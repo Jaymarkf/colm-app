@@ -37,6 +37,7 @@
         <button class="text-slate-800 px-2 py-1 rounded bg-green-100 hover:bg-green-200 border submit" type="submit"><i class="fa fa-save"></i> Save</button>
         </div>
     </form>
+    @if(count($banner_images))
         <div class="container-carousel flex flex-wrap justify-center border border-slate-400 rounded-lg py-2">
             @foreach($banner_images as $key => $img)
                 <br>
@@ -53,7 +54,7 @@
                             <span class="bg-gray-500 px-3 py-1 rounded-lg cursor-pointer hover:bg-gray-400 mr-3 btn_edit" title="edit" data-modal-toggle="defaultModal" banner_id="{{$img->id}}">
                                 <i class="fa fa-edit text-white"></i>
                             </span>
-                            <span class="bg-gray-500 px-3 py-1 rounded-lg cursor-pointer hover:bg-gray-400 btn_delete" title="delete">
+                            <span class="bg-gray-500 px-3 py-1 rounded-lg cursor-pointer hover:bg-gray-400 btn_delete" title="delete" banner_delete_id="{{$img->id}}">
                                 <i class="fa fa-trash text-red-300"></i>
                             </span>
                         </div>
@@ -61,6 +62,9 @@
                 </div>
             @endforeach
         </div>
+    @else
+        <h3 class="block w-full text-lg text-center">There are no banner images.</h3>
+    @endif
     </main>
     <footer>    
         <!-- Main modal -->

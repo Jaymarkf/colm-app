@@ -50,6 +50,9 @@
                         <input type="password" name="password" placeholder="Password"  class="border border-gray-400 rounded-lg admin-input w-full mb-2 h-8 p-2 px-3 text-sm" required>
                         <!-- <small class="mb-2 text-red-400">error</small> -->
                         <button type="submit" class="admin-input w-full bg-gray-200 font-bold py-2 rounded-md hover:bg-lime-500 hover:text-white">Log in</button>
+                        <small class="block text-right w-full max-w-[240px] mt-3">
+                            <a href="/" class="text-blue-400  underline underline-offset-4">go back to front page</a>
+                        </small>
                     </form>
                 </div>
         </div>
