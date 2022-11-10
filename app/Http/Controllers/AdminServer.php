@@ -68,6 +68,7 @@ class AdminServer extends Controller
         foreach($temp as $val){
             $banner_context['banner_image'][] = "/storage/images/carousel/". $val->banner_name;
             $banner_context['banner_link'][] = $val->banner_link;
+            $banner_context['banner_link_blurb'][] = $val->banner_link_blurb;
             $banner_context['banner_blurb'][] = $val->banner_blurb;
         }
         return view('dashboard',['banner_context' => $banner_context]);

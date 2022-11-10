@@ -23,17 +23,29 @@
 <div class="main-banner">
     <div class="container-slick">
       @if(count($banner_context))
-        @foreach($banner_context['banner_image'] as $img)
+        @foreach($banner_context['banner_image'] as $img => $key)
           <div class="slicked">
-            <img src="{{$img}}" data-src="{{$img}}" 
+            <img src="{{$key}}" data-src="{{$key}}" 
             data-srcset="
-            {{$img}} 300w,
-            {{$img}} 600w,
-            {{$img}} 900w,
+            {{$key}} 300w,
+            {{$key}} 600w,
+            {{$key}} 900w,
             " class="lazyload" data-sizes="auto" alt="">
             <div class="cbanner-blurb w-full md:absolute md:w-2/4">
-                <a href="#" class="xl:text-2xl">Lorem Ipsum</a>
-                <p class="xl:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore illo deserunt est fuga corrupti,</p>
+              @if($banner_context['banner_link_blurb'][$img])  
+                <a href="
+                @if($banner_context['banner_link'][$img])
+                {{$banner_context['banner_link'][$img]}}
+                @endif
+                " class="xl:text-2xl">
+                {{$banner_context['banner_link_blurb'][$img]}}
+                </a>
+              @endif
+              @if($banner_context['banner_blurb'][$img])
+                <p class="xl:text-lg">
+                  {{$banner_context['banner_blurb'][$img]}}
+                </p>
+              @endif
             </div>
           </div>
         @endforeach
