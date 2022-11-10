@@ -31,6 +31,7 @@
             {{$key}} 600w,
             {{$key}} 900w,
             " class="lazyload" data-sizes="auto" alt="">
+            @if($banner_context['banner_flag'][$img] == 'show')
             <div class="cbanner-blurb w-full md:absolute md:w-2/4">
               @if($banner_context['banner_link_blurb'][$img])  
                 <a href="
@@ -47,6 +48,7 @@
                 </p>
               @endif
             </div>
+            @endif
           </div>
         @endforeach
       @endif

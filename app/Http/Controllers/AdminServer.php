@@ -70,6 +70,11 @@ class AdminServer extends Controller
             $banner_context['banner_link'][] = $val->banner_link;
             $banner_context['banner_link_blurb'][] = $val->banner_link_blurb;
             $banner_context['banner_blurb'][] = $val->banner_blurb;
+            if($val->banner_link == "" && $val->banner_link_blurb == "" && $val->banner_blurb == ""){
+                $banner_context['banner_flag'][] = 'hide';
+            }else{
+                $banner_context['banner_flag'][] = 'show';
+            }
         }
         return view('dashboard',['banner_context' => $banner_context]);
        }else{
