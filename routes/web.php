@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminServer;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/',[AdminServer::class,'manage_carousel']);
+Route::get('/',[AdminServer::class,'show']);
 
 //ADMIN PART
 Route::get('colm-admin',function(){
@@ -25,13 +24,13 @@ Route::get('admin-dashboard',function(){
     return view('admin-dashboard');
 })->middleware('auth_admin');
 
-Route::get('manage_carousel',[AdminServer::class,'manage_carousel'])->middleware('auth_admin');
+Route::get('manage_carousel',[AdminServer::class,'show'])->middleware('auth_admin');
 
-Route::post('admin',[AdminServer::class,'edit_carousel'])->middleware('auth_admin');
+Route::post('admin',[AdminServer::class,'edit'])->middleware('auth_admin');
+Route::post('admin/delete',[AdminServer::class,'delete'])->middleware('auth_admin');
 //post mnethod
-Route::any('add_new_carousel',[AdminServer::class,'add_new_carousel']);
+Route::any('add_new_carousel',[AdminServer::class,'add']);
 
 Route::any('login-colm-admin',[AdminServer::class,'login'])->name('colm-admin');
-Route::post('update_delete_carousel',function(){
-    dd('todo');
-});
+
+Route::post('update_delete_carousel',[AdminServer::class,'update'])->middleware('auth_admin');
