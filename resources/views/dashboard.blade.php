@@ -17,8 +17,6 @@
   <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js" defer></script>
 </head>
 <body>
-
-
 @include('sections/header')
 <div class="main-banner">
     <div class="container-slick">
@@ -55,9 +53,9 @@
     </div>
 </div>
 @include('sections/event-calendar')
-@include('sections/news');
-
+@include('sections/news')
 </body>
+@include('/sections/footer')
 <script>
     $(document).ready(function(){
         $('.hm').click(function(){
