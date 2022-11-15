@@ -56,6 +56,7 @@
 @include('sections/news')
 </body>
 @include('/sections/footer')
+@include('sections/modal-popup')
 <script>
     $(document).ready(function(){
         $('.hm').click(function(){
