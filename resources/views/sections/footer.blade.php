@@ -6,13 +6,13 @@
     
     <address>
     <ul class="flex space-between items-center flex-wrap">
-      <li class="w-1/2">(0917)170-0766</li>  
-      <li class="w-1/2">(0968)852-3185</li>
-      <li class="w-1/2">(044)230-2214</li>
-      <li class="w-1/2">(044)815-8642</li>
-      <li class="w-1/2">(044)760-7266</li>
+      <li class="w-1/2 text-black">(0917) 170-0766</li>  
+      <li class="w-1/2 text-black">(0968) 852-3185</li>
+      <li class="w-1/2 text-black">(044) 230-2214</li>
+      <li class="w-1/2 text-black">(044) 815-8642</li>
+      <li class="w-1/2 text-black">(044) 760-7266</li>
     </ul>
-      <span class="text-slate-400">Email: registrar@colm.edu.ph</span>
+      <span class="text-blackrf v        ">Email: registrar@colm.edu.ph</span>
       <a class="footer__btn" href="mailto:registrar@colm.edu.ph">Email Us</a>
     </address>
   </div>

@@ -208,3 +208,14 @@ h3.month-year{
     }
 }
 /* end of news section*/
+/*footer section */
+footer.footer{
+    background-image:url('/storage/assets/lime-green.webp');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    & > * {
+        color:black;
+        font-weight:600;
+    }
+}
