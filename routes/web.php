@@ -13,24 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[AdminServer::class,'show']);
+// Route::get('/', [AdminServer::class, 'show']);
+Route::get('/', function () {
+    return view('front.homepage');
+});
 
 //ADMIN PART
-Route::get('colm-admin',function(){
+Route::get('colm-admin', function () {
     session()->pull('login');
     return view('colm-admin');
 });
-Route::get('admin-dashboard',function(){
+Route::get('admin-dashboard', function () {
     return view('admin-dashboard');
 })->middleware('auth_admin');
 
-Route::get('manage_carousel',[AdminServer::class,'show'])->middleware('auth_admin');
+Route::get('manage_carousel', [AdminServer::class, 'show'])->middleware('auth_admin');
 
-Route::post('admin',[AdminServer::class,'edit'])->middleware('auth_admin');
-Route::post('admin/delete',[AdminServer::class,'delete'])->middleware('auth_admin');
+Route::post('admin', [AdminServer::class, 'edit'])->middleware('auth_admin');
+Route::post('admin/delete', [AdminServer::class, 'delete'])->middleware('auth_admin');
 //post mnethod
-Route::any('add_new_carousel',[AdminServer::class,'add']);
+Route::any('add_new_carousel', [AdminServer::class, 'add']);
 
-Route::any('login-colm-admin',[AdminServer::class,'login'])->name('colm-admin');
+Route::any('login-colm-admin', [AdminServer::class, 'login'])->name('colm-admin');
 
-Route::post('update_delete_carousel',[AdminServer::class,'update'])->middleware('auth_admin');
+Route::post('update_delete_carousel', [AdminServer::class, 'update'])->middleware('auth_admin');
+
+//Joenn test
+Route::get('joenn', function () {
+    return view('front/homepage');
+});
