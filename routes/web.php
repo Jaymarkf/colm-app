@@ -16,7 +16,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', [AdminServer::class, 'show']);
 Route::get('/', function () {
     return view('front.homepage');
-});
+})->name('home.show');
+
+Route::get('/school-profile', function () {
+    return view('front.school-profile');
+})->name('school-profile.show');
+
+Route::get('/contact-us', function () {
+    return view('front.contact-us');
+})->name('contact-us.show');
 
 //ADMIN PART
 Route::get('colm-admin', function () {

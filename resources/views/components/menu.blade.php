@@ -10,7 +10,7 @@
     <div id="lower-menu" class="rounded-b-3xl shadow-lg">
         <div class="grid grid-cols-12 w-12/12 xl:w-10/12 mx-auto px-4 lg:px-0 py-2">
             <div class="col-span-3 lg:col-span-1 flex items-center justify-start">
-                <img loading="lazy" src="{{asset('storage/images/logo.webp')}}" id="menu-logo" alt="COLM Logo">
+                <img loading="lazy" src="{{asset('images/logo.webp')}}" id="menu-logo" alt="COLM Logo">
                 {{-- COLLEGE OF OUR LADY OF MERCY OF PULILAN FOUNDATION, INC. --}}
             </div>
             <div class="col-span-9 lg:col-span-11 p-2 flex items-center justify-end">
@@ -18,12 +18,12 @@
                     <input class="hidden" type="checkbox" name="burger-drawer" id="burger-drawer">
                     <div id="top-logo" class="absolute scale-0 transition-all ease-in-out duration-300 md:scale-100 md:relative md:flex justify-end md:mb-3 border-b border-gray-300">
                         <div class="grid grid-cols-6 py-2 mb-3">
-                            <div class="org-img"><img src="{{ asset('storage/images/deped.webp') }}" alt="DepEd Logo"></div>
-                            <div class="org-img"><img src="{{ asset('storage/images/up.webp') }}" alt="UP Logo"></div>
-                            <div class="org-img"><img src="{{ asset('storage/images/ched.webp') }}" alt="CHED Logo"></div>
-                            <div class="org-img"><img src="{{ asset('storage/images/tesda.webp') }}" alt="TESDA Logo"></div>
-                            <div class="org-img"><img src="{{ asset('storage/images/pacu-logo.webp') }}" alt="PACU Logo"></div>
-                            <div class="org-img"><img src="{{ asset('storage/images/pacu1957.webp') }}" alt="PACU 1957 Logo"></div>
+                            <div class="org-img"><img src="{{ asset('images/deped.webp') }}" alt="DepEd Logo"></div>
+                            <div class="org-img"><img src="{{ asset('images/up.webp') }}" alt="UP Logo"></div>
+                            <div class="org-img"><img src="{{ asset('images/ched.webp') }}" alt="CHED Logo"></div>
+                            <div class="org-img"><img src="{{ asset('images/tesda.webp') }}" alt="TESDA Logo"></div>
+                            <div class="org-img"><img src="{{ asset('images/pacu-logo.webp') }}" alt="PACU Logo"></div>
+                            <div class="org-img"><img src="{{ asset('images/pacu1957.webp') }}" alt="PACU 1957 Logo"></div>
                         </div>
                     </div>
                     <div class="flex justify-end md:my-3">
@@ -33,8 +33,8 @@
                                     <a class="reg-link">About <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
                                     <div class="absolute mb-0 md:-mt-1 h-0 group-hover:h-auto bg-green-700 group-hover:p-3 transition-all ease-in-out duration-300 origin-top shadow-lg rounded-lg overflow-hidden">
                                         <div class="child-menu">
-                                            <div><a href="" class="text-white hover:text-gray-300 transition-all ease-in-out duration-300">School Profile</a></div>
-                                            <div><a href="" class="text-white hover:text-gray-300 transition-all ease-in-out duration-300">Virtual Tour</a></div>
+                                            <div><a href="{{ route('school-profile.show') }}" class="text-white hover:text-gray-300 transition-all ease-in-out duration-300">School Profile</a></div>
+                                            <div><a href="{{ route('contact-us.show') }}" class="text-white hover:text-gray-300 transition-all ease-in-out duration-300">Virtual Tour</a></div>
                                             <div><a href="" class="text-white hover:text-gray-300 transition-all ease-in-out duration-300">Contact Us</a></div>
                                         </div>
                                     </div>

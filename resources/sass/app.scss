@@ -378,3 +378,7 @@ footer.footer{
 body.modal-open {
     overflow-y: hidden;
 }
+
+.section a {
+    @apply text-green-700 hover:text-green-600 transition-all ease-in-out duration-300 underline;
+}
