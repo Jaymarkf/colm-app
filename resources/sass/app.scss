@@ -269,7 +269,17 @@ footer.footer{
 }
 
 #burger-drawer:checked ~ div > label > #hamburger {
-    @apply fixed z-50 -translate-x-14 -translate-y-6;
+    @apply fixed z-50 -translate-x-14 -translate-y-3;
+}
+
+#burger-drawer:checked ~ div > label > #hamburger > div:first-child {
+    @apply rotate-45 inset-0 transform absolute;
+}
+#burger-drawer:checked ~ div > label > #hamburger > div:nth-child(2) {
+    @apply -rotate-45 inset-0 transform absolute;
+}
+#burger-drawer:checked ~ div > label > #hamburger > div:last-child {
+    @apply hidden;
 }
 
 #burger-drawer:checked ~ #top-logo {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title ?? "COLM | College of Our Lady of Mercy of Pulilan Foundation Inc." }}</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('storage/images/logo.webp')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('images/logo.webp')}}">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>

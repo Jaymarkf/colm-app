@@ -77,8 +77,8 @@
 
     <div class="section">
         <div class="sectionInner">
-            <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-9/12 m-auto py-24 space-x-0 md:space-x-3">
-                <div class="m-auto bg-color1 hover:bg-green-800 text-green-900 hover:text-white transition-all ease-in-out duration-300 w-full rounded-lg p-5 h-72 flex flex-col items-center justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-9/12 m-auto py-24 space-x-0 md:space-x-3 space-y-3 md:space-y-0">
+                <div class="m-auto bg-color1 hover:bg-green-800 text-green-900 hover:text-white transition-all ease-in-out duration-300 w-full rounded-lg p-5 flex flex-col items-center justify-center">
                     <div>
                         <h2 class="mb-4 text-3xl font-bold uppercase tracking-[1rem]"><i class="fa fa-eye" aria-hidden="true"></i> Vision</h2>
                         <div class="text-xl text-justify">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="m-auto bg-color1 hover:bg-green-800 text-green-900 hover:text-white transition-all ease-in-out duration-300 w-full rounded-lg p-5 h-72 flex flex-col items-center justify-center">
+                <div class="m-auto bg-color1 hover:bg-green-800 text-green-900 hover:text-white transition-all ease-in-out duration-300 w-full rounded-lg p-5 flex flex-col items-center justify-center">
                     <div>
                         <h2 class="mb-4 text-3xl font-bold uppercase tracking-[1rem]"><i class="fa fa-bullseye" aria-hidden="true"></i> Mission</h2>
                         <div class="text-xl text-justify">
