@@ -2,20 +2,20 @@
 <x-layout>
 
     <x-slot name="title">
-        School Profile | College of Our Lady of Mercy of Pulilan Foundation Inc.
+        School Profile
     </x-slot>
 
     <div class="section bg-white">
-        <div class="pt-40 md:pt-52 bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('images/green-bg.jpg')}}')">
-            <div style="font-family:'Copperplate Gothic Bold', Courier, monospace;" class="text-5xl font-bold text-white mb-3 text-center py-24 drop-shadow">
+        <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('images/green-bg.jpg')}}')">
+            <h1 style="font-family:'Copperplate Gothic Bold', Courier, monospace;" class="text-5xl font-bold text-white mb-3 text-center py-24 drop-shadow">
                 College of Our Lady of Mercy
-            </div>
+            </h1>
         </div>
     </div>
     <div class="section">
         <div class="sectionInner">
             <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-9/12 m-auto pt-24">
-                <div class="m-auto">
+                <div>
                     <img src="{{ asset('images/COLM Building.jpg') }}" alt="COLM Building" class="rounded-3xl shadow-xl shadow-gray-300 w-full md:w-10/12" />
                 </div>
                 <div class="p-5 text-lg">

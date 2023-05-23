@@ -11,6 +11,7 @@
 
 
 html,body{
+    font-family: 'Nunito', sans-serif;
     margin:0;
     padding:0;
 }
@@ -20,7 +21,7 @@ header.mheader h1, header.mheader a,.hdropdown-desktop,.hdropdown{
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header .mheader h1{
-    font-family:"Copperplate Gothic Bold";
+    font-family: "Copperplate Gothic Bold";
 }
 .hm span{
     width:20px;
@@ -287,8 +288,7 @@ footer.footer{
 }
 
 .hero-slider {
-    padding-top: 20vh;
-    height: 100vh;
+    height: 60vh;
 }
 .navigation-wrapper {
   position: relative;
@@ -389,6 +389,54 @@ body.modal-open {
     overflow-y: hidden;
 }
 
-.section a {
-    @apply text-green-700 hover:text-green-600 transition-all ease-in-out duration-300 underline;
+.ff-cgb {
+    font-family: 'Copperplate Gothic Bold', Courier, monospace !important;
+}
+
+.mobile-menu {
+    > div {
+        @apply mb-7 uppercase;
+    }
+    .mobile-submenu {
+        > a {
+            @apply uppercase;
+        }
+        .mobile-submenu-content {
+            @apply ml-12;
+        }
+    }
+}
+.nav-menu {
+    @apply text-center hidden md:block;
+    > div {
+        @apply inline relative px-8 z-10;
+        > a {
+            @apply text-green-800 hover:text-green-600 transition-all ease-in-out duration-300 cursor-pointer;
+        }
+    }
+    > div:last-child {
+        padding-right: 0px !important;
+    }
+    .dropdown-menu {
+        @apply relative inline overflow-hidden z-10;
+        .dropdown-content {
+            @apply hidden border border-gray-200 absolute rounded-lg top-full left-0 bg-white shadow-lg py-2;
+            z-index: 99999 !important;
+            a {
+                @apply py-2 px-2 text-gray-600 hover:text-white hover:bg-gray-400 transition-all ease-in-out duration-200 cursor-pointer;
+            }
+        }
+
+        &:hover .dropdown-content {
+            @apply block;
+        }
+    }
+}
+
+.page-h1 {
+    @apply text-2xl font-bold text-gray-800;
+}
+
+.page-h2 {
+    @apply text-xl font-bold text-gray-800;
 }

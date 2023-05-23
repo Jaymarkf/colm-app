@@ -2,16 +2,25 @@
 <x-layout>
 
     <x-slot name="title">
-        Contact Us | College of Our Lady of Mercy of Pulilan Foundation Inc.
+        Contact Us
     </x-slot>
-
     <div class="section bg-white">
-        <div class="pt-40 md:pt-52 bg-cover bg-center bg-no-repeat">
+        <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('images/green-bg.jpg')}}')">
+            <h1 style="font-family:'Copperplate Gothic Bold', Courier, monospace;" class="text-5xl font-bold text-white mb-3 text-center py-24 drop-shadow">
+                Contact Us
+            </h1>
+        </div>
+    </div>
+    <div class="section bg-white">
+        <div class="bg-cover bg-center bg-no-repeat">
             <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-9/12 m-auto py-24">
-                <div class="m-auto">
-                    <h1 class="text-7xl font-bold uppercase text-gray-600">
-                        Contact Us
-                    </h1>
+                <div>
+                    <h2 class="text-3xl text-center md:text-left md:text-6xl font-bold uppercase text-gray-600">
+                        Get in touch!
+                    </h2>
+                    <div>
+                        <img src="{{ asset('images/call-image.png') }}" alt="Call us now!" />
+                    </div>
                 </div>
                 <div class="p-5">
                     <h2 class="font-bold text-2xl uppercase text-gray-500"><i class="fa fa-phone" aria-hidden="true"></i> Contact Numbers</h2>
