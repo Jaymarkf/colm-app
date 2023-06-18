@@ -1,14 +1,17 @@
 
 <div id="hero-slider" class="keen-slider hero-slider">
     @foreach ($banner_context as $banner)
-        <div class="keen-slider__slide bg-cover bg-center flex justify-center items-center" style="background-image: url('{{ asset('storage/images/carousel/' . $banner['banner_name']) }}');">
+        <div class="keen-slider__slide bg-cover bg-center relative" style="background-image: url('{{ asset('storage/images/carousel/' . $banner['banner_name']) }}');">
             <a href="{{ $banner['banner_link'] }}" target="_blank" rel="noreferrer">
-                <div class="p-10 text-white shadow-lg text-center" style="background-color: rgba(6, 52, 9, 0.718);">
-                    <div class="text-3xl font-bold mb-5">
-                        {{ $banner['banner_link_blurb'] }}
-                    </div>
-                    <div class="max-w-lg">
-                        {{ $banner['banner_blurb'] }}
+                <div class="p-10 grid grid-cols-2 text-white shadow-lg w-full h-full bg-opacity-60 bg-black">
+                    <div></div>
+                    <div class="flex flex-col justify-center">
+                        <div class="text-3xl font-bold mb-5">
+                            {{ $banner['banner_link_blurb'] }}
+                        </div>
+                        <div class="max-w-lg">
+                            {{ $banner['banner_blurb'] }}
+                        </div>
                     </div>
                 </div>
             </a>

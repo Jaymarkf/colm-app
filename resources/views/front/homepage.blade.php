@@ -10,12 +10,12 @@
     <div class="section">
         <div class="sectionInner">
             <div class="grid grid-cols-1 md:grid-cols-6 py-32">
-                <div class="org-img"><img src="{{ asset('storage/images/deped.webp') }}" class="bodyimg" alt="DepEd Logo"></div>
-                <div class="org-img"><img src="{{ asset('storage/images/up.webp') }}" class="bodyimg" alt="UP Logo"></div>
-                <div class="org-img"><img src="{{ asset('storage/images/ched.webp') }}" class="bodyimg" alt="CHED Logo"></div>
-                <div class="org-img"><img src="{{ asset('storage/images/tesda.webp') }}" class="bodyimg" alt="TESDA Logo"></div>
-                <div class="org-img"><img src="{{ asset('storage/images/pacu-logo.webp') }}" class="bodyimg" alt="PACU Logo"></div>
-                <div class="org-img"><img src="{{ asset('storage/images/pacu1957.webp') }}" class="bodyimg" alt="PACU Logo"></div>
+                <div class="org-img"><img src="{{ asset('images/deped.webp') }}" class="bodyimg" alt="DepEd Logo"></div>
+                <div class="org-img"><img src="{{ asset('images/up.webp') }}" class="bodyimg" alt="UP Logo"></div>
+                <div class="org-img"><img src="{{ asset('images/ched.webp') }}" class="bodyimg" alt="CHED Logo"></div>
+                <div class="org-img"><img src="{{ asset('images/tesda.webp') }}" class="bodyimg" alt="TESDA Logo"></div>
+                <div class="org-img"><img src="{{ asset('images/pacu-logo.webp') }}" class="bodyimg" alt="PACU Logo"></div>
+                <div class="org-img"><img src="{{ asset('images/pacu1957.webp') }}" class="bodyimg" alt="PACU Logo"></div>
             </div>
         </div>
     </div>
