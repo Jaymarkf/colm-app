@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.homepage');
 })->name('home.show');
+
+
 Route::get('/school-profile', function () {
     return view('front.school-profile');
 })->name('school-profile.show');

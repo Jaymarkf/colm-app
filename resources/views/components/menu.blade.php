@@ -31,7 +31,7 @@
             <div><a href="{{ route('home.show') }}">FAQ</a></div>
         </div>
     </div>
-    <div class="w-full xl:w-10/12 m-auto grid grid-cols-2 bg-white">
+    <div class="w-full xl:w-11/12 m-auto grid grid-cols-2 bg-white">
         <div class="p-2 flex flex-col justify-center">
             <div class="uppercase text-xs text-green-700">Programs Offered:</div>
             <div class="uppercase font-bold text-sm md:text-base text-gray-700">On-going Enrollment for S.Y. 2022-2023</div>
@@ -70,7 +70,7 @@
                         <a href="#" class="block">Requirements</a>
                     </div>
                 </div>
-                <div><a href="{{ route('home.show') }}">FAQ</a></div>
+                <div class="dropdown-menu"><a class="cursor-pointer" href="{{ route('home.show') }}">FAQ</a></div>
             </div>
         </div>
     </div>

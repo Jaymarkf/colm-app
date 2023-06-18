@@ -6892,6 +6892,9 @@ readers do not read off random characters that represent icons */.fa-0::before {
 }.hover\:bg-gray-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}.hover\:bg-green-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 250 229 / var(--tw-bg-opacity));
 }.hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
@@ -7037,12 +7040,12 @@ readers do not read off random characters that represent icons */.fa-0::before {
     width: 58.333333%;
   }.md\:w-full {
     width: 100%;
-  }.md\:w-10\/12 {
-    width: 83.333333%;
   }.md\:w-40 {
     width: 10rem;
   }.md\:w-9\/12 {
     width: 75%;
+  }.md\:w-10\/12 {
+    width: 83.333333%;
   }.md\:w-2\/3 {
     width: 66.666667%;
   }.md\:w-1\/4 {
@@ -7122,8 +7125,6 @@ readers do not read off random characters that represent icons */.fa-0::before {
     width: 75%;
   }.lg\:w-1\/5 {
     width: 20%;
-  }.lg\:w-10\/12 {
-    width: 83.333333%;
   }.lg\:flex-col {
     flex-direction: column;
   }.lg\:items-start {
@@ -7137,6 +7138,8 @@ readers do not read off random characters that represent icons */.fa-0::before {
   }
 }@media (min-width: 1280px) {.xl\:w-40 {
     width: 10rem;
+  }.xl\:w-11\/12 {
+    width: 91.666667%;
   }.xl\:w-10\/12 {
     width: 83.333333%;
   }.xl\:w-4\/5 {
