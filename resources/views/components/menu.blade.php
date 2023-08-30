@@ -1,5 +1,5 @@
 <nav class="w-full">
-    <div id="mobile-menu" class="bg-white block w-screen h-screen absolute -translate-x-full top-0 md:hidden z-40 transition-all ease-in-out duration-200">
+    <div id="mobile-menu" class="overflow-y-scroll bg-white block w-screen h-screen absolute -translate-x-full top-0 md:hidden z-40 transition-all ease-in-out duration-200">
         <div class="w-1/2 m-auto pt-16 mobile-menu">
             <div><a href="{{ route('home.show') }}" class="mb-5">Home</a></div>
             <div class="mobile-submenu">
@@ -31,7 +31,7 @@
             <div><a href="{{ route('home.show') }}">FAQ</a></div>
         </div>
     </div>
-    <div class="w-full xl:w-11/12 m-auto grid grid-cols-2 bg-white">
+    <div class="w-full xl:w-11/12 m-auto flex bg-white justify-between">
         <div class="p-2 flex flex-col justify-center">
             <div class="uppercase text-xs text-green-700">Programs Offered:</div>
             <div class="uppercase font-bold text-sm md:text-base text-gray-700">On-going Enrollment for S.Y. 2022-2023</div>
@@ -55,12 +55,12 @@
                 <div class="dropdown-menu">
                     <a class="cursor-pointer">Programs <em class="fa fa-chevron-down" aria-hidden="true"></em></a>
                     <div class="dropdown-content">
-                        <a href="#" class="block">Pre-elementary</a>
-                        <a href="#" class="block">Elementary</a>
-                        <a href="#" class="block">Junior HS</a>
-                        <a href="#" class="block">Senior HS</a>
-                        <a href="#" class="block">College</a>
-                        <a href="#" class="block">TESDA</a>
+                        <a href="/pre-elementary" class="block">Pre-elementary</a>
+                        <a href="/elementary" class="block">Elementary</a>
+                        <a href="/junior-hs" class="block">Junior HS</a>
+                        <a href="/shs" class="block">Senior HS</a>
+                        <a href="/college" class="block">College</a>
+                        <a href="/tesda" class="block">TESDA</a>
                     </div>
                 </div>
                 <div class="dropdown-menu">

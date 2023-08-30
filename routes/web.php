@@ -53,3 +53,24 @@ Route::post('update_delete_carousel', [AdminServer::class, 'update'])->middlewar
 Route::get('joenn', function () {
     return view('front/homepage');
 });
+/*---------PROGRAMS-----*/
+
+Route::get('pre-elementary',function(){
+    return view('front.pre-elementary');
+});
+Route::get('elementary',function(){
+    return view('front.elementary');
+});
+Route::get('junior-hs',function(){
+    return view('front.junior-hs');
+});
+Route::get('shs',function(){
+    return view('front.shs');
+});
+Route::get('college',function(){
+    return view('front.college');
+});
+Route::get('tesda',function(){
+    return view('front.tesda');
+});
+/*--------END OF PROGRAMS-------*/
