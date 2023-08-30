@@ -515,6 +515,8 @@ video {
   display: flex;
 }.inline-flex {
   display: inline-flex;
+}.table {
+  display: table;
 }.grid {
   display: grid;
 }.hidden {
@@ -639,6 +641,8 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }.grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
+}.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }.flex-col {
   flex-direction: column;
 }.flex-wrap {
@@ -889,6 +893,9 @@ video {
 }.py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }.pt-2 {
   padding-top: 0.5rem;
 }.pt-1 {
@@ -7037,12 +7044,12 @@ readers do not read off random characters that represent icons */.fa-0::before {
     width: 58.333333%;
   }.md\:w-full {
     width: 100%;
-  }.md\:w-10\/12 {
-    width: 83.333333%;
   }.md\:w-40 {
     width: 10rem;
   }.md\:w-9\/12 {
     width: 75%;
+  }.md\:w-10\/12 {
+    width: 83.333333%;
   }.md\:w-2\/3 {
     width: 66.666667%;
   }.md\:w-1\/4 {
@@ -7122,8 +7129,6 @@ readers do not read off random characters that represent icons */.fa-0::before {
     width: 75%;
   }.lg\:w-1\/5 {
     width: 20%;
-  }.lg\:w-10\/12 {
-    width: 83.333333%;
   }.lg\:flex-col {
     flex-direction: column;
   }.lg\:items-start {

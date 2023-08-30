@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/joenn-test', function () {
+    return view('test');
+});
+
 // Route::get('/', [AdminServer::class, 'show']);
 Route::get('/', function () {
     return view('front.homepage');
