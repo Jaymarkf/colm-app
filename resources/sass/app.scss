@@ -407,7 +407,7 @@ body.modal-open {
     }
 }
 .nav-menu {
-    @apply text-center hidden md:block;
+    @apply text-center hidden md:flex;
     > div {
         @apply inline relative px-8 z-10;
         > a {
@@ -418,7 +418,7 @@ body.modal-open {
         padding-right: 0px !important;
     }
     .dropdown-menu {
-        @apply relative inline overflow-hidden z-10;
+        @apply relative inline z-10 whitespace-nowrap;
         .dropdown-content {
             @apply hidden border border-gray-200 absolute rounded-lg top-full left-0 bg-white shadow-lg py-2;
             z-index: 99999 !important;
@@ -439,4 +439,38 @@ body.modal-open {
 
 .page-h2 {
     @apply text-xl font-bold text-gray-800;
+}
+
+.programs-content{
+    @apply md:max-w-screen-xl lg:max-w-screen-2xl flex items-start flex-wrap mx-auto justify-center;
+    .card-container{
+        width:calc(100% / 4 - 1.75rem);
+        @apply bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3 w-5/6 sm:w-5/12 md:w-3/12 lg:w-2/12;
+        .pc-img-a{
+            overflow:hidden;
+            display:block;
+        }
+        img{
+            transition: 0.4s all;
+        }
+        &:hover img{
+            transform:scale(1.2);
+        }
+    }
+    .read-more{
+        transition:0.4s all;
+        @apply bg-[#d97706];
+   
+        svg{
+            transition:0.4s all;
+            position:relative;
+        }
+        &:hover{
+            background-color:rgb(236, 136, 28);
+        }
+        &:hover svg{
+            right:-5px;
+            transition:0.4s all;
+        }
+    }
 }

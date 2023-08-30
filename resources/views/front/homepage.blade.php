@@ -32,7 +32,7 @@
         <div class="sectionInner">
             <div class="grid grid-cols-1 md:grid-cols-3 space-y-2 md:space-y-0 space-x-0 md:space-x-2">
                 <div class="rounded-lg shadow-xl">
-                    <div style="background-image: url('https://via.placeholder.com/550/FF0000/FFFFFF/?Text=COLMPlaceholder')" class="h-60 bg-cover bg-center rounded-t-lg">
+                    <div style="background-image: url('https://placehold.co/600x400')" class="h-60 bg-cover bg-center rounded-t-lg">
                         
                     </div>
                     <div class="p-4">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="rounded-lg shadow-xl">
-                    <div style="background-image: url('https://via.placeholder.com/550/FF0000/FFFFFF/?Text=COLMPlaceholder')" class="h-60 bg-cover bg-center rounded-t-lg">
+                    <div style="background-image: url('https://placehold.co/600x400')" class="h-60 bg-cover bg-center rounded-t-lg">
                         
                     </div>
                     <div class="p-4">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="rounded-lg shadow-xl">
-                    <div style="background-image: url('https://via.placeholder.com/550/FF0000/FFFFFF/?Text=COLMPlaceholder')" class="h-60 bg-cover bg-center rounded-t-lg">
+                    <div style="background-image: url('https://placehold.co/600x400')" class="h-60 bg-cover bg-center rounded-t-lg">
                         
                     </div>
                     <div class="p-4">
