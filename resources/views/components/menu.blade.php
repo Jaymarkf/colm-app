@@ -13,12 +13,12 @@
             <div class="mobile-submenu">
                 <a class="cursor-pointer">Programs <em class="fa fa-chevron-down" aria-hidden="true"></em></a>
                 <div class="mobile-submenu-content">
-                    <a href="#" class="block">Pre-elementary</a>
-                    <a href="#" class="block">Elementary</a>
-                    <a href="#" class="block">Junior HS</a>
-                    <a href="#" class="block">Senior HS</a>
-                    <a href="#" class="block">College</a>
-                    <a href="#" class="block">TESDA</a>
+                    <a href="pre-elementary" class="block">Pre-elementary</a>
+                    <a href="elementary" class="block">Elementary</a>
+                    <a href="junior-hs" class="block">Junior HS</a>
+                    <a href="shs" class="block">Senior HS</a>
+                    <a href="college" class="block">College</a>
+                    <a href="tesda" class="block">TESDA</a>
                 </div>
             </div>
             <div class="mobile-submenu">
