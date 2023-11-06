@@ -463,6 +463,9 @@ video {
 }.my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }.mb-2 {
   margin-bottom: 0.5rem;
 }.mb-3 {
@@ -699,6 +702,8 @@ video {
 }.gap-x-3 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
+}.gap-y-4 {
+  row-gap: 1rem;
 }.space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -6751,6 +6756,12 @@ readers do not read off random characters that represent icons */.fa-0::before {
     width: 40%;
   }.lg\:w-\[35\%\] {
     width: 35%;
+  }.lg\:w-\[25\%\] {
+    width: 25%;
+  }.lg\:w-\[24\%\] {
+    width: 24%;
+  }.lg\:w-\[19\%\] {
+    width: 19%;
   }.lg\:flex-col {
     flex-direction: column;
   }.lg\:items-start {
@@ -6761,6 +6772,9 @@ readers do not read off random characters that represent icons */.fa-0::before {
   }.lg\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }.lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }@media (min-width: 1280px) {.xl\:w-40 {
     width: 10rem;
