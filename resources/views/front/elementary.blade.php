@@ -1,22 +1,117 @@
 
 <x-layout>
+<style>
+  svg#freepik_stories-teaching:not(.animated) .animable {
+    opacity: 0;
+  }
 
+  svg#freepik_stories-teaching.animated #freepik--Blackboard--inject-22 {
+    animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown;
+    animation-delay: 0s;
+  }
+
+  svg#freepik_stories-teaching.animated #freepik--character-1--inject-22 {
+    animation: 1.5s Infinite linear floating;
+    animation-delay: 0s;
+  }
+
+  svg#freepik_stories-teaching.animated #freepik--character-2--inject-22 {
+    animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideLeft;
+    animation-delay: 0s;
+  }
+
+  svg#freepik_stories-teaching.animated #freepik--character-3--inject-22 {
+    animation: 1.5s Infinite linear shake;
+    animation-delay: 0s;
+  }
+
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floating {
+    0% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes slideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes shake {
+
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+</style>
+<script type='text/javascript'>document.addEventListener('DOMContentLoaded', function () {window.setTimeout(document.querySelector('svg').classList.add('animated'),1000);})</script>
     <x-slot name="title">
         Elementary
     </x-slot>
 
     <div class="section bg-white">
-        <div class="bg-cover bg-center bg-no-repeat h-96 flex items-center justify-center" style="background-image: url('{{asset('images/pre-elementary-bg.jpg')}}');background-attachment:fixed;">
-            <h1 data-aos="fade-up" data-aos-anchor-placement="top-center" style="font-family:'Copperplate Gothic Bold', Courier, monospace;" class="text-5xl font-bold text-white text-center drop-shadow">
-             Elementary
-            </h1>
-            <div class="blurb-programs-title md:w-2/5 text-white pl-16" data-aos="zoom-out-left">
-                <span class="block font-bold mb-4 text-2xl">Your child will be in a low student-teacher ratio, ensuring their holistic development in a fun learning experience, in one of the best private schools in Bulacan.</span>
-                <span  class="drop-shadow-lg">Primary education aims to develop spiritual, moral, mental and physical capabilities of pupils, provides them with experiences in the democratic way of life and inculcates ideas and attitudes necessary for enlightened, patriotic, upright and useful citizenship.</span>
+
+        <div class="bg-cover bg-center bg-no-repeat flex relative w-full text-center flex-col items-center justify-center md:flex-row">
+            <div class="svg-animated w-full lg:w-[35%]">
+            {!! file_get_contents(public_path('svg/elementary.svg')) !!}
+            </div>
+            <div class="container-svg-content w-full flex items-center justify-center flex-col pl-5 pr-5 lg:w-[35%]">
+                <h1  data-aos-anchor-placement="top-center" style="font-family:'Copperplate Gothic Bold', Courier, monospace;" class="text-xl font-bold text-center drop-shadow">
+                Elementary
+                </h1>
+                <div class="blurb-programs-title">
+                    <span class="block font-bold mb-4 text-sm">Your child will be in a low student-teacher ratio, ensuring their holistic development in a fun learning experience, in one of the best private schools in Bulacan.</span>
+                    <span  class="drop-shadow-lg text-sm">Primary education aims to develop spiritual, moral, mental and physical capabilities of pupils, provides them with experiences in the democratic way of life and inculcates ideas and attitudes necessary for enlightened, patriotic, upright and useful citizenship.</span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="programs-content">
+    <div class="programs-content mt-[50px]">
         <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>

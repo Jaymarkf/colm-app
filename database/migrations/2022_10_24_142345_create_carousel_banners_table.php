@@ -15,10 +15,10 @@ class CreateCarouselBannersTable extends Migration
     {
         Schema::create('carousel_banners', function (Blueprint $table) {
                 $table->id();
-                $table->string('banner_name');
-                $table->string('banner_link');
-                $table->string('banner_link_blurb');
-                $table->string('banner_blurb');
+                $table->text('banner_name');
+                $table->text('banner_link');
+                $table->text('banner_link_blurb');
+                $table->text('banner_blurb');
                 $table->rememberToken();
                 $table->timestamps();
         });

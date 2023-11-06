@@ -33,11 +33,11 @@
                
                 <div class="container-form w-2/3 flex items-center justify-center flex-col">
                     <div class="container-logo-img mb-2">
-                    <img src="{{asset('storage/images/logo.webp')}}" data-src="{{asset('storage/images/logo.webp')}}" 
+                    <img src="{{asset('/images/logo.webp')}}" data-src="{{asset('/images/logo.webp')}}" 
                                 data-srcset="
-                                {{asset('storage/images/logo.webp')}} 300w,
-                                {{asset('storage/images/logo.webp')}} 600w,
-                                {{asset('storage/images/logo.webp')}} 900w,
+                                {{asset('/images/logo.webp')}} 300w,
+                                {{asset('/images/logo.webp')}} 600w,
+                                {{asset('/images/logo.webp')}} 900w,
                                 " class="lazyload" data-sizes="auto" alt="">
                     </div>
                     @if(Session::get('fail'))

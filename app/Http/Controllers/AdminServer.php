@@ -35,7 +35,7 @@ class AdminServer extends Controller
             //convert to webp
             $img->encode('webp');
             //save it as webp
-            $img->save(storage_path('app/public/images/carousel/'.$file_name.'.webp'),80,'webp');
+            $img->save(public_path('/images/carousel/'.$file_name.'.webp'),80,'webp');
             $db_carousel = new CarouselBanner(); 
             $db_carousel->banner_name = $file_name . '.webp';
 
@@ -66,7 +66,7 @@ class AdminServer extends Controller
         $temp = CarouselBanner::all();
         $banner_context = array();
         foreach($temp as $val){
-            $banner_context['banner_image'][] = "/storage/images/carousel/". $val->banner_name;
+            $banner_context['banner_image'][] = "/images/carousel/". $val->banner_name;
             $banner_context['banner_link'][] = $val->banner_link;
             $banner_context['banner_link_blurb'][] = $val->banner_link_blurb;
             $banner_context['banner_blurb'][] = $val->banner_blurb;
@@ -98,7 +98,7 @@ class AdminServer extends Controller
                         //delete existing image file first
                         $temp = CarouselBanner::where('id' ,'=',$request->banner_ids)->get()->first();
                         $image_file = $temp->banner_name;
-                        Storage::delete('/public/images/carousel/'.$image_file);
+                        Storage::delete(public_path('/images/carousel/'.$image_file));
 
                         $file_name = time().'_'.$image->getClientOriginalExtension();
                         //use intervention
@@ -106,7 +106,7 @@ class AdminServer extends Controller
                         //convert to webp
                         $img->encode('webp');
                         //save it as webp
-                        $img->save(storage_path('app/public/images/carousel/'.$file_name. '.webp'),80,'webp');
+                        $img->save(public_path('/images/carousel/'.$file_name. '.webp'),80,'webp');
 
             
                         $button_blurb = $request->button_caption;
@@ -163,7 +163,7 @@ class AdminServer extends Controller
     function delete(Request $request){
        $id =  $request->banner_ids;
        $temp = CarouselBanner::where('id',$id)->get()->first();
-       Storage::delete('/public/images/carousel/'.$temp->banner_name);
+       Storage::delete(public_path('/images/carousel/'.$temp->banner_name));
        CarouselBanner::where('id',$id)->delete();
        return 'success';
     }

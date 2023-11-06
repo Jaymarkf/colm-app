@@ -80,9 +80,14 @@
     </script>
 
     <x-footer />
-    <script>
-        AOS.init();
-    </script>
+    @if (Request::path() == 'pre-elementary' OR 
+     Request::path() == 'elementary' OR 
+     Request::path() == 'junior-hs' OR 
+     Request::path() == 'shs' OR 
+     Request::path() == 'college' OR 
+     Request::path() == 'tesda')
+        <script>AOS.init();</script>
+    @endif
 </body>
 
 </html>

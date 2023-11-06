@@ -43,11 +43,11 @@
                 <br>
                 <div class="col-img flex items-center justify-center flex-col relative m-1 md:w-[32%] lg:w-1/5">
                  
-                    <img src="{{asset('storage/images/carousel/'. $img->banner_name)}}" data-src="{{asset('storage/images/carousel/'. $img->banner_name)}}" 
+                    <img src="{{asset('/images/carousel/'. $img->banner_name)}}" data-src="{{asset('/images/carousel/'. $img->banner_name)}}" 
                     data-srcset="
-                    {{asset('storage/images/carousel/'. $img->banner_name)}} 300w,
-                    {{asset('storage/images/carousel/'. $img->banner_name)}} 600w, 
-                    {{asset('storage/images/carousel/'. $img->banner_name)}} 900w,
+                    {{asset('/images/carousel/'. $img->banner_name)}} 300w,
+                    {{asset('/images/carousel/'. $img->banner_name)}} 600w, 
+                    {{asset('/images/carousel/'. $img->banner_name)}} 900w,
                     " class="lazyload carousels" data-sizes="auto" alt=""> 
                     <div class="img-blurb absolute w-full h-full flex flex-col justify-start items-start z-10 bg-gradient-to-t from-stone-900 p-2">
                         <div class="row-action flex">
