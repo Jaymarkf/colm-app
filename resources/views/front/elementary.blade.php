@@ -152,7 +152,7 @@
             <h2 class="text-white md:text-4xl font-bold text-center mb-3">Elementary Faculty</h2>
             <span class="text-md text-white text-center max-w-lg block mx-auto">We take pride in our academic excellence, but more importantly in nurturing each one’s compassion and drive to make a difference.It is our honor fostering next-generation leaders.</span>
 
-            <div class="flex flex-wrap gap-y-4 gap-x-4 justify-center items-center">            
+            <div class="flex flex-wrap gap-y-4 gap-x-4 justify-center items-start">            
                 <div class="container-flex-faculty mt-10 lg:w-[19%]">
                     <div class="card-container max-w-sm bg-white rounded-md overflow-hidden">
                         <a class="teacher-profile-img">
