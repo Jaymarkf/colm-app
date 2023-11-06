@@ -7,13 +7,13 @@
 
     <div class="section bg-white">
         <div class="bg-cover bg-center bg-no-repeat h-96 flex items-center justify-center" style="background-image: url('{{asset('images/college.jpg')}}');background-attachment:fixed;">
-            <h1 style="font-family:'Copperplate Gothic Bold', Courier, monospace;" class="text-5xl font-bold text-white text-center drop-shadow-md">
+            <h1 data-aos="fade-up" data-aos-anchor-placement="top-center" style="font-family:'Copperplate Gothic Bold', Courier, monospace;" class="text-5xl font-bold text-white text-center drop-shadow-md">
               College
             </h1>
         </div>
     </div>
     <div class="programs-content">
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
             </a>
@@ -30,7 +30,7 @@
                 </a>
             </div>
         </div>
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
             </a>
@@ -47,7 +47,7 @@
                 </a>
             </div>
         </div>
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
             </a>
@@ -64,7 +64,7 @@
                 </a>
             </div>
         </div>
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
             </a>
@@ -81,7 +81,7 @@
                 </a>
             </div>
         </div>
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
             </a>
@@ -98,7 +98,7 @@
                 </a>
             </div>
         </div>
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
             </a>
@@ -115,7 +115,7 @@
                 </a>
             </div>
         </div>
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
             </a>

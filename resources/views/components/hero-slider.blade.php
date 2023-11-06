@@ -1,15 +1,14 @@
 
-<div id="hero-slider" class="keen-slider hero-slider">
+<div id="hero-slider" class="keen-slider hero-slider h-full">
     @foreach ($banner_context as $banner)
-        <div class="keen-slider__slide bg-cover bg-center relative" style="background-image: url('{{ asset('storage/images/carousel/' . $banner['banner_name']) }}');">
+        <div class="keen-slider__slide bg-cover bg-center relative xs:!min-h-[300px] md:!min-h-[450px] lg:!min-h-[500px]" style="background-image: url('{{ asset('/images/carousel/' . $banner['banner_name']) }}');">
             <a href="{{ $banner['banner_link'] }}" target="_blank" rel="noreferrer">
-                <div class="p-10 grid grid-cols-2 text-white shadow-lg w-full h-full bg-opacity-60 bg-black">
-                    <div></div>
+                <div class="p-10 flex text-white shadow-lg w-full h-full bg-opacity-60 bg-black items-center justify-center">
                     <div class="flex flex-col justify-center">
-                        <div class="text-3xl font-bold mb-5">
+                        <div class="text-3xl font-bold mb-5 text-center">
                             {{ $banner['banner_link_blurb'] }}
                         </div>
-                        <div class="max-w-lg">
+                        <div class="max-w-3xl text-center">
                             {{ $banner['banner_blurb'] }}
                         </div>
                     </div>

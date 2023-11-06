@@ -62,8 +62,8 @@ $(document).ready(function(){
            if(msg.banner_name){
                 $('#loading').addClass('hidden');
                 $('[edit_form_content]').removeClass('hidden');
-                $('#blah').attr('src',window.location.origin +"/storage/images/carousel/" + msg.banner_name);
-                $('#user_avatar').attr('src',window.location.origin +"/storage/images/carousel/" + msg.banner_name);
+                $('#blah').attr('src',window.location.origin +"/images/carousel/" + msg.banner_name);
+                $('#user_avatar').attr('src',window.location.origin +"/images/carousel/" + msg.banner_name);
                 $('#banner_link').val(msg.banner_link);
                 $('#banner_context').val(msg.banner_blurb);
                 $('#button_caption').val(msg.banner_link_blurb);

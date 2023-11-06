@@ -13,12 +13,12 @@
             <div class="mobile-submenu">
                 <a class="cursor-pointer">Programs <em class="fa fa-chevron-down" aria-hidden="true"></em></a>
                 <div class="mobile-submenu-content">
-                    <a href="#" class="block">Pre-elementary</a>
-                    <a href="#" class="block">Elementary</a>
-                    <a href="#" class="block">Junior HS</a>
-                    <a href="#" class="block">Senior HS</a>
-                    <a href="#" class="block">College</a>
-                    <a href="#" class="block">TESDA</a>
+                    <a href="pre-elementary" class="block">Pre-elementary</a>
+                    <a href="elementary" class="block">Elementary</a>
+                    <a href="junior-hs" class="block">Junior HS</a>
+                    <a href="shs" class="block">Senior HS</a>
+                    <a href="college" class="block">College</a>
+                    <a href="tesda" class="block">TESDA</a>
                 </div>
             </div>
             <div class="mobile-submenu">
@@ -81,9 +81,9 @@
                 <img loading="lazy" src="{{asset('images/logo.webp')}}" class="w-16 md:w-40" alt="COLM Logo">
             </div>
             <div class="block text-right">
-                <div>
-                    <div class="mb-5">
-                        <a href="{{ route('contact-us.show') }}" class="mr-3 text-lg bg-white hover:bg-green-700 hover:text-white hover:shadow-lg hover:shadow-color1 transition-all ease-in-out duration-200 border-2 border-green-700 text-green-700 font-bold px-5 py-2 rounded-full">Inquire <em class="fa fa-question-circle" aria-hidden="true"></em></a>
+                <div class="">
+                    <div class="mb-5 flex justify-end gap-y-3  gap-x-4 flex-wrap">
+                        <a href="{{ route('contact-us.show') }}" class="md:mr-3 text-lg bg-white hover:bg-green-700 hover:text-white hover:shadow-lg hover:shadow-color1 transition-all ease-in-out duration-200 border-2 border-green-700 text-green-700 font-bold px-5 py-2 rounded-full">Inquire <em class="fa fa-question-circle" aria-hidden="true"></em></a>
                         <a href="https://forms.gle/nyqjR9VA74VZ4bEUA" target="_blank" class="text-lg bg-yellow-600 shadow-lg shadow-color1 hover:bg-yellow-500 hover:border-yellow-500 transition-all ease-in-out duration-200 border-2 border-yellow-600 text-white font-bold px-5 py-2 rounded-full">Enroll <em class="fa-solid fa-chevron-right"></em></a>
                     </div>
                     <div class="grid grid-cols-6 py-2">
