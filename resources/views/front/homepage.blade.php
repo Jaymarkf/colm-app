@@ -2,8 +2,41 @@
 <x-layout>
     <style>
         .today {
-            background-color: #ff9999;
+            border: 1px solid #a1e7c5;
         }
+
+        /* CSS for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: #f4f4f4;
+            margin: 15% auto;
+            border: 1px solid #888;
+            width: 60%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
     </style>
     <x-slot name="title">
         College of Our Lady of Mercy of Pulilan Foundation Inc.
@@ -76,10 +109,22 @@
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="close mr-3" onclick="closeModal()">&times;</div>
+            <div id="eventImage" style="background: url('https://placehold.co/600x400') no-repeat; background-size: cover; background-position: center; width: 100%; height: 300px;">
 
+            </div>
+            <div class="p-3">
+                <div id="title" style="font-size: 1.2rem;" class="font-bold">Event Title</div>
+                <div id="subTitle" class="italic" style="color: #4f4f4f; margin-bottom: 1rem;">Event Sub-title</div>
+                <div id="content">Asdsads dasdasdasdasd asdasd asdsdasda aSDASDASdasdas dasd qwjke oiqwjeiowqj ioewqjeiowqjioqwjeoiwqj eoiqwjejqwoijq oejqwoie jiowqje oiqwjeioqwjeoiqw</div>
+            </div>
+        </div>
+    </div>
     <script defer>
         let year = new Date().getFullYear();
-        let month = new Date().getMonth(); // June
+        let month = new Date().getMonth();
 
         function createCalendar() {
             const monthYearHeader = getMonthName(month) + " " + year;
@@ -99,7 +144,7 @@
                         break;
                     } else {
                         const isToday = checkIfToday(date);
-                        row.push({ day: date, isToday });
+                        row.push({ month, year, day: date, isToday });
                         date++;
                     }
                 }
@@ -143,7 +188,13 @@
             updateCalendar();
         }
 
-        function updateCalendar() {
+        async function updateCalendar() {
+            let eventsThisMonth = null;
+            await fetch(`{{ route('events.apiget') }}/month/${month + 1}`)
+                .then((res) => res.json())
+                .then((res) => {
+                    eventsThisMonth = res.data;
+                });
             const { monthYearHeader, calendar } = createCalendar();
             document.getElementById("monthYearHeader").textContent = monthYearHeader;
 
@@ -155,11 +206,49 @@
                 for (const cell of row) {
                     const td = document.createElement("td");
                     td.className = "p-2" + (cell.isToday ? " today" : "");
-                    td.textContent = cell.day;
+                    let tdContent = cell.day;
+                    if (cell.day !== "" && cell.day !== null && cell.day !== 0) {
+                        // Find the corresponding event for this day
+                        const events = eventsThisMonth.filter((event) => new Date(event.event_date).getDate() === cell.day);
+                        if (events.length > 0) {
+                            // Create a string with event titles
+                            const eventTitles = events.map((event) => {
+                                return `<div onClick="openModal(${event.id})" class="border border-gray-500 p-2 mb-1 cursor-pointer">${event.title}</div>`;
+                            }).join('');
+                            tdContent = tdContent + '<br>' + eventTitles;
+                        }
+                    }
+
+                    td.innerHTML = tdContent;
+
                     tr.appendChild(td);
                 }
                 calendarBody.appendChild(tr);
             }
+        }
+
+        async function openModal(eventId) {
+            console.log(eventId);
+            await fetch(`{{ route('events.apiget') }}/getEvent/${eventId}`)
+                .then((res) => res.json())
+                .then((res) => {
+                    const data = res.data;
+                    const modal = document.getElementById("myModal");
+                    const modalTitle = document.getElementById("title");
+                    const modalSubTitle = document.getElementById("subTitle");
+                    const modalContent = document.getElementById("content");
+                    const eventImage = document.getElementById("eventImage");
+                    modalTitle.innerHTML = data.title;
+                    modalSubTitle.innerHTML = data.sub_title;
+                    modalContent.innerHTML = data.content;
+                    eventImage.style.backgroundImage = `url("{{ asset('storage/event_images') }}/${data.event_image}")`;
+                    modal.style.display = "block";
+                });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
         }
 
         updateCalendar();
