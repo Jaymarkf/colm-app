@@ -85,6 +85,7 @@
     </div>
 </body>
 <script type="text/javascript" src="{{asset('js/custom-script.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/manage-carousel.js')}}"></script>
 <script>
     function deleteEvent(id) {
         const deleteForm = document.getElementById("deleteForm");

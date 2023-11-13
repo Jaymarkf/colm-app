@@ -22,7 +22,12 @@
             background-color: #f4f4f4;
             margin: 15% auto;
             border: 1px solid #888;
-            width: 60%;
+            width: 90%;
+        }
+        @media(min-width:450px){
+            .modal-content{
+                width:70%;
+            }
         }
 
         .close {
@@ -205,7 +210,7 @@
                 const tr = document.createElement("tr");
                 for (const cell of row) {
                     const td = document.createElement("td");
-                    td.className = "p-2" + (cell.isToday ? " today" : "");
+                    td.className = "p-1 md:p-2" + (cell.isToday ? " today" : "");
                     let tdContent = cell.day;
                     if (cell.day !== "" && cell.day !== null && cell.day !== 0) {
                         // Find the corresponding event for this day
@@ -213,7 +218,7 @@
                         if (events.length > 0) {
                             // Create a string with event titles
                             const eventTitles = events.map((event) => {
-                                return `<div onClick="openModal(${event.id})" class="border border-gray-500 p-2 mb-1 cursor-pointer">${event.title}</div>`;
+                                return `<div onClick="openModal(${event.id})" class="border border-gray-500 p-1 md:p-2 mb-1 cursor-pointer">${event.title}</div>`;
                             }).join('');
                             tdContent = tdContent + '<br>' + eventTitles;
                         }

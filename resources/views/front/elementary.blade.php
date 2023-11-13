@@ -255,7 +255,7 @@
     <div class="testimonial-container my-10 flex items-center flex-col justify-center">
         <h2 class="text-center text-3xl font-bold">TESTIMONIALS</h2>
         <div class="container-testimonials max-w-3xl mt-5">
-            <p class="text-lg text-center italic font-bold"><span class="left-quote">“</span>The covid 19 pandemic may have affected the interest of other students to open their books, I can say not the elementary department especially the preschool pupils. Despite of the unconventional learning delivery modalities under the new normal, the situation didn’t deter them to acquire skills in reading. CONGRATULATIONS to Ma’am Ann Roxas, their teacher, and to their respective parents.<span class="right-quote">”</span></p>  
+            <p class="text-lg text-center italic font-bold"><span class="left-quote">“</span>The covid 19 pandemic may have affected the interest of other students to open their books, I can say not the elementary department especially the preschool pupils. Despite of the unconventional learning delivery modalities under the new normal, the situation didn’t deter them to acquire skills in reading. CONGRATULATIONS to Ma’am Ann Roxas, their teacher, and to their respective parents.<span class="right-quote">”</span> -- reference: <a href="https://www.facebook.com/colmpulilan/posts/3730317647059674?ref=embed_post" target="_blank" class="text-sky-400 underline">facebook</p>  
         </div>
     </div>
 </x-layout>
