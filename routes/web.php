@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminServer;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -53,28 +54,37 @@ Route::any('login-colm-admin', [AdminServer::class, 'login'])->name('colm-admin'
 
 Route::post('update_delete_carousel', [AdminServer::class, 'update'])->middleware('auth_admin');
 
+Route::get('calendar-events', [EventController::class, 'index'])->name('events.index')->middleware('auth_admin');
+Route::get('calendar-events/add', [EventController::class, 'add'])->name('events.add')->middleware('auth_admin');
+Route::post('calendar-events/add', [EventController::class, 'store'])->name('events.store')->middleware('auth_admin');
+Route::get('calendar-events/{eventId?}', [EventController::class, 'edit'])->name('events.edit')->middleware('auth_admin');
+Route::put('calendar-events/{eventId?}', [EventController::class, 'update'])->name('events.update')->middleware('auth_admin');
+Route::delete('calendar-events/{eventId?}', [EventController::class, 'destroy'])->name('events.destroy')->middleware('auth_admin');
+
+Route::get('events/{mode?}/{date?}', [EventController::class, 'api_get'])->name('events.apiget');
+
 //Joenn test
 Route::get('joenn', function () {
     return view('front/homepage');
 });
 /*---------PROGRAMS-----*/
 
-Route::get('pre-elementary',function(){
+Route::get('pre-elementary', function () {
     return view('front.pre-elementary');
 });
-Route::get('elementary',function(){
+Route::get('elementary', function () {
     return view('front.elementary');
 });
-Route::get('junior-hs',function(){
+Route::get('junior-hs', function () {
     return view('front.junior-hs');
 });
-Route::get('shs',function(){
+Route::get('shs', function () {
     return view('front.shs');
 });
-Route::get('college',function(){
+Route::get('college', function () {
     return view('front.college');
 });
-Route::get('tesda',function(){
+Route::get('tesda', function () {
     return view('front.tesda');
 });
 /*--------END OF PROGRAMS-------*/

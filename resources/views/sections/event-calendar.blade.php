@@ -25,7 +25,7 @@
                 </div>
         </div>
     </div>
-    <div class="w-2/5 bg-white h-full text-center">
+    <div class="w-full md2:w-2/5 bg-white h-full text-center">
         <h3 class="coa">Calendar Of Activities</h3>
         <h4 class="sy font-bold">S.Y. 2022 - 2023</h4>
         <div class="container mx-auto px-4 py-8">
@@ -51,13 +51,13 @@
             <table class="w-full">
                 <thead>
                     <tr>
-                        <th class="p-2">Sun</th>
-                        <th class="p-2">Mon</th>
-                        <th class="p-2">Tue</th>
-                        <th class="p-2">Wed</th>
-                        <th class="p-2">Thu</th>
-                        <th class="p-2">Fri</th>
-                        <th class="p-2">Sat</th>
+                        <th class="p-1 md:p-2">Sun</th>
+                        <th class="p-1 md:p-2">Mon</th>
+                        <th class="p-1 md:p-2">Tue</th>
+                        <th class="p-1 md:p-2">Wed</th>
+                        <th class="p-1 md:p-2">Thu</th>
+                        <th class="p-1 md:p-2">Fri</th>
+                        <th class="p-1 md:p-2">Sat</th>
                     </tr>
                 </thead>
                 <tbody id="calendarBody">
