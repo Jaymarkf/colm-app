@@ -135,7 +135,7 @@ class AdminServer extends Controller
             }else{
                 return back()->withErrors(['msg' => 'file not accepted. please choose jpg/png/bmp/jpeg only.']);
             }
-        }else{
+        }else{ 
             //save only blurb
             $button_blurb = $request->button_caption;
             $button_link = $request->banner_link;

@@ -10,6 +10,9 @@
                 <li class="text-gray-700 text-center py-2 font-bold" manage_carousel>
                     <a href="manage_carousel">Manage Carousel</a>
                 </li>
+                <li class="text-gray-700 text-center py-2 font-bold">
+                    <a href="{{ route('events.index') }}">Manage Event</a>
+                </li>
             </ul>
         </div>
     </nav>

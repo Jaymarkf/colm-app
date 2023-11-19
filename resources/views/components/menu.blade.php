@@ -13,7 +13,7 @@
             <div class="mobile-submenu">
                 <a class="cursor-pointer">Programs <em class="fa fa-chevron-down" aria-hidden="true"></em></a>
                 <div class="mobile-submenu-content">
-                    <a href="pre-elementary" class="block">Pre-elementary</a>
+                    <a href="pre-elementary" class="block">Pre School</a>
                     <a href="elementary" class="block">Elementary</a>
                     <a href="junior-hs" class="block">Junior HS</a>
                     <a href="shs" class="block">Senior HS</a>
@@ -55,7 +55,7 @@
                 <div class="dropdown-menu">
                     <a class="cursor-pointer">Programs <em class="fa fa-chevron-down" aria-hidden="true"></em></a>
                     <div class="dropdown-content">
-                        <a href="/pre-elementary" class="block">Pre-elementary</a>
+                        <a href="/pre-elementary" class="block">Pre School</a>
                         <a href="/elementary" class="block">Elementary</a>
                         <a href="/junior-hs" class="block">Junior HS</a>
                         <a href="/shs" class="block">Senior HS</a>
