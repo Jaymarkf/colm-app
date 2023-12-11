@@ -9,13 +9,13 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     @include ('js-script.data-aos')
+    @include ('js-script.data-aos')
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
 </head >
 <body>
     <x-menu />
 
-    <div class="modal opacity-0 transition-all ease-in-out duration-300 fixed w-full h-screen top-0 left-0 flex items-center justify-center -z-10">
+    <div class="form-modal opacity-0 transition-all ease-in-out duration-300 fixed w-full h-screen top-0 left-0 flex items-center justify-center -z-10">
         <div class="modal-window scale-0 transition-all ease-in-out delay-300 duration-300 w-11/12 md:w-7/12 p-5 bg-white rounded-xl shadow shadow-black relative">
             <span class="absolute top-1 right-3 text-lg close-modal cursor-pointer"><em class="fa fa-times" aria-hidden="true"></em></span>
             <div class="grid grid-cols-1 md:grid-cols-12 mb-3">
@@ -64,7 +64,7 @@
             if (getDate < currDate) {
                 setTimeout(() => {
                     $('body').addClass('modal-open');
-                    $('.modal').addClass('modal-show');
+                    $('.form-modal').addClass('modal-show');
                     $('.modal-window').addClass('modal-window-show')
                 }, 2000);
             }
@@ -72,7 +72,8 @@
 
         $('.close-modal').on('click', function() {
             $('body').removeClass('modal-open');
-            $('.modal').removeClass('modal-show');
+            $('.form-modal').removeClass('modal-show');
+            $('.modal-window').removeClass('modal-window-show')
             let currDate = new Date();
             currDate.setDate(currDate.getDate() + 7);
             localStorage.setItem('modal-date', currDate);
