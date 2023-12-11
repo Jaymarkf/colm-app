@@ -20,7 +20,7 @@
 
         .modal-content {
             background-color: #f4f4f4;
-            margin: 15% auto;
+            margin:0;
             border: 1px solid #888;
             width: 90%;
         }
@@ -233,7 +233,6 @@
         }
 
         async function openModal(eventId) {
-            console.log(eventId);
             await fetch(`{{ route('events.apiget') }}/getEvent/${eventId}`)
                 .then((res) => res.json())
                 .then((res) => {
@@ -247,7 +246,9 @@
                     modalSubTitle.innerHTML = data.sub_title;
                     modalContent.innerHTML = data.content;
                     eventImage.style.backgroundImage = `url("{{ asset('storage/event_images') }}/${data.event_image}")`;
-                    modal.style.display = "block";
+                    modal.style.display = "flex";
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
                 });
         }
 
@@ -259,3 +260,29 @@
         updateCalendar();
     </script>
 </x-layout>
+<link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+<script>
+        $(document).ready(function () {
+            const currDate = new Date();
+            const storedDate = new Date(localStorage.getItem('modal-date'));
+
+            // Check if stored date is not available or if it's more than 3 days old
+            if (!storedDate || (currDate - storedDate) > 3 * 24 * 60 * 60 * 1000) {
+                setTimeout(() => {
+                    $('body').addClass('modal-open');
+                    $('.modal').addClass('modal-show');
+                    $('.modal-window').addClass('modal-window-show');
+                }, 2000);
+            }
+        });
+
+        $('.close-modal').on('click', function () {
+            $('body').removeClass('modal-open');
+            $('.modal').removeClass('modal-show');
+
+            // Set the expiration date to 3 days from the current date
+            let currDate = new Date();
+            currDate.setDate(currDate.getDate() + 3);
+            localStorage.setItem('modal-date', currDate.toISOString());
+        });
+</script>

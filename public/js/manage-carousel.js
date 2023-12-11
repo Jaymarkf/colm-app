@@ -100,3 +100,5 @@ $(document).ready(function(){
             });
         }
     });
+    const baguetteBox = require('baguettebox.js');
+    baguetteBox.run('.container-offers');

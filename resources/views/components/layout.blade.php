@@ -92,6 +92,7 @@
      Request::path() == 'college' OR 
      Request::path() == 'tesda')
         <script>AOS.init();</script>
+        
     @endif
 </body>
 
