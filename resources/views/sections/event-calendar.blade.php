@@ -1,5 +1,5 @@
-<div class="event-calendar-container flex items-start justify-center  bg-emerald-800">
-    <div class="col-event col-event-banner w-3/5 bg-emerald-800">
+<div class="event-calendar-container flex items-start justify-center bg-emerald-800">
+    <div class="col-event col-event-banner w-full md:w-3/5 bg-emerald-800">
         {{-- <div class="evt-header flex flex-col md:flex-row items-center bg-white ">
             <h3 class="w-full md:w-1/4 text-center bg-black text-white py-2 md:py-4 font-bold">Programs Offered:</h3>
             <marquee class="w-fill md:w-3/4 bg-white py-2 md:py-4 font-bold">ON-GOING ENROLLMENT FOR S.Y. 2022-2023</marquee>
