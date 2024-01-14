@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     @include ('js-script.data-aos')
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
 </head >
 <body>
     <x-menu />
@@ -20,7 +23,7 @@
             <span class="absolute top-1 right-3 text-lg close-modal cursor-pointer"><em class="fa fa-times" aria-hidden="true"></em></span>
             <div class="grid grid-cols-1 md:grid-cols-12 mb-3">
                 <div class="col-span-4 flex justify-center object-cover">
-                    <img loading="lazy" src="{{asset('images/logo.webp')}}" class="w-1/2 md:w-full lg:w-9/12 object-contain mb-3 md:mb-0" alt="COLM Logo">
+                 <img loading="lazy" src="{{asset('images/logo.webp')}}" class="w-1/2 md:w-full lg:w-9/12 object-contain mb-3 md:mb-0" alt="COLM Logo"></a>
                 </div>
                 <div class="col-span-8 flex flex-col items-center justify-center">
                     <h2 class="text-lg md:text-2xl font-bold text-green-700 text-center">Ready to begin your journey with us? Click 'Online Application' below to get started!</h2>
@@ -39,7 +42,8 @@
     {{ $slot }}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{{ mix('/js/app.js') }}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>   
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>	
     {{-- <script defer>
         $('document').ready(function() {
             $('#hamburger').on('click', function() {
@@ -49,6 +53,39 @@
     </script> --}}
     <script defer>
         $('document').ready(function() {
+            //banner slider
+            $('.slick-slider-container').slick({
+                arrows:true,
+                dots:true,
+                adaptiveHeight:true,
+                responsive: [
+                    {
+                        breakpoint: 1920, // screen width from 1024px and below
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 768, // screen width from 1024px and below
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 500, // screen width from 600px and below
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    // Add more breakpoints and settings as needed
+                ]
+            });
+
+
+
             $('#menu-burger').on('click', function() {
                 $('body').toggleClass('overflow-hidden')
                 $('#mobile-menu').toggleClass('-translate-x-full');
@@ -75,8 +112,9 @@
         });
 
         $('.close-modal').on('click', function () {
+            console.log('clkose');
             $('body').removeClass('modal-open');
-            $('.modal').removeClass('modal-show');
+            $('.form-modal').removeClass('modal-show');
 
             // Set the expiration date to 3 days from the current date
             let currDate = new Date();

@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="section bg-white">
-        <div class="bg-cover bg-center bg-no-repeat flex relative w-full text-center flex-col items-center justify-center md:flex-row">
+        <div class="bg-cover bg-center bg-no-repeat flex relative w-full text-center flex-col items-center justify-center md:flex-row mt-10">
             <div class="svg-animated w-full lg:w-[35%]">
             {!! file_get_contents(public_path('svg/pre-elementary.svg')) !!}
             </div>

@@ -78,7 +78,7 @@
     <div class="w-full bg-white border-b border-gray-200 drop-shadow-xl" style="position: relative; z-index: 1;">
         <div class="w-full xl:w-10/12 m-auto py-3 px-2 block md:flex items-center">
             <div class="flex-grow inline md:block float-left md:float-none">
-                <img loading="lazy" src="{{asset('images/logo.webp')}}" class="w-16 md:w-40" alt="COLM Logo">
+                <a href="/"><img loading="lazy" src="{{asset('images/logo.webp')}}" class="w-16 md:w-40" alt="COLM Logo"></a>
             </div>
             <div class="block text-right">
                 <div class="">
@@ -112,7 +112,7 @@
     <div id="lower-menu" class="rounded-b-3xl shadow-lg">
         <div class="grid grid-cols-12 w-12/12 xl:w-10/12 mx-auto px-4 lg:px-0 py-2">
             <div class="col-span-3 lg:col-span-2 flex items-center justify-start">
-                <img loading="lazy" src="{{asset('images/logo.webp')}}" id="menu-logo" alt="COLM Logo">
+                <a href="/"><img loading="lazy" src="{{asset('images/logo.webp')}}" id="menu-logo" alt="COLM Logo"></a>
                 <div class="ml-2 font-bold text-2xl ff-cgb text-green-800">
                     <div>COLM</div>
                 </div>

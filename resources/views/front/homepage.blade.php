@@ -117,7 +117,7 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <div class="close mr-3" onclick="closeModal()">&times;</div>
-            <div id="eventImage" style="background: url('https://placehold.co/600x400') no-repeat; background-size: cover; background-position: center; width: 100%; height: 300px;">
+            <div id="eventImage" style="background: url('https://placehold.co/600x400') no-repeat; background-size: contain; background-position: center; width: 100%; height: 300px;">
 
             </div>
             <div class="p-3">
@@ -231,11 +231,12 @@
                 calendarBody.appendChild(tr);
             }
         }
-
         async function openModal(eventId) {
             await fetch(`{{ route('events.apiget') }}/getEvent/${eventId}`)
+
                 .then((res) => res.json())
                 .then((res) => {
+                    console.log(res);
                     const data = res.data;
                     const modal = document.getElementById("myModal");
                     const modalTitle = document.getElementById("title");
@@ -245,7 +246,7 @@
                     modalTitle.innerHTML = data.title;
                     modalSubTitle.innerHTML = data.sub_title;
                     modalContent.innerHTML = data.content;
-                    eventImage.style.backgroundImage = `url("{{ asset('storage/event_images') }}/${data.event_image}")`;
+                    eventImage.style.backgroundImage = `url("{{ asset('storage/event_images') }}/${encodeURIComponent(data.event_image)}")`;
                     modal.style.display = "flex";
                     modal.style.justifyContent = 'center';
                     modal.style.alignItems = 'center';
@@ -278,7 +279,7 @@
 
         $('.close-modal').on('click', function () {
             $('body').removeClass('modal-open');
-            $('.modal').removeClass('modal-show');
+            $('.form-modal').removeClass('modal-show');
 
             // Set the expiration date to 3 days from the current date
             let currDate = new Date();
