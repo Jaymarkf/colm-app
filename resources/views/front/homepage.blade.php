@@ -67,47 +67,63 @@
     </div>
 
     <div class="section mb-20">
+        <h2 class="text-center font-extrabold text-2xl text-[#065f46] mb-5 mt-12">TOP UPDATES</h2>
         <div class="sectionInner">
+
             <div class="grid grid-cols-1 md:grid-cols-3 space-y-2 md:space-y-0 space-x-0 md:space-x-2">
-                <div class="rounded-lg shadow-xl">
-                    <div style="background-image: url('https://placehold.co/600x400')" class="h-60 bg-cover bg-center rounded-t-lg">
-                        
-                    </div>
-                    <div class="p-4">
-                        <div class="text-lg text-green-700 font-bold mb-3">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
-                        <div class="text-sm mb-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam blanditiis voluptatibus quidem quis dicta ipsam labore quo voluptates reprehenderit nostrum atque similique exercitationem excepturi optio, asperiores maxime et ipsum.
+
+                <div class="rounded-lg shadow-xl text">
+                        <div style="background-image: url({{asset('images/top-updates-1.jpg')}})" class="h-60 bg-contain bg-center bg-no-repeat rounded-t-lg"></div>
+                        <div class="p-4">
+                        <div class="authoer-date-post"><span class="text-xs">Author: <strong>ANA RONA SUPAPO</strong>&nbsp;</span>
+                        <br>
+                        <span class="text-gray text-xs">Date posted: 19 January 2024</span>
                         </div>
-                        <div>
-                            <a href="#" class="py-2 px-3 transition-all ease-in-out duration-300 bg-yellow-500 text-white border-2 border-white hover:bg-white hover:text-yellow-500 hover:border-yellow-500 text-sm rounded font-bold">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            <div class="text-lg text-green-700 font-bold mb-3">𝗪𝗘 𝗔𝗥𝗘 𝗛𝗜𝗥𝗜𝗡𝗚!!! 📣</div>
+                            <div class="text-sm mb-3">
+                                𝗪𝗘 𝗔𝗥𝗘 𝗛𝗜𝗥𝗜𝗡𝗚!!! 📣
+                                Take advantage of this opportunity to be a part of one of the top schools in Bulacan. 👩‍🏫🧑‍🏫
+                                Job vacancy open positions:
+                                - 𝗠𝗔𝗧𝗛𝗘𝗠𝗔𝗧𝗜𝗖𝗦 𝗧𝗘𝗔𝗖𝗛𝗘𝗥
+                                Leave a copy of your resume in the guardhouse or send it via email: francisco.jessmar@colm.edu.ph 
+                                Mr. Jess Mar RS Toribio Francisco, MBA
+                                DIRECTOR, HUMAN RESOURCES DEPARTMENT
+                            </div>
+                            <div>
+                                <!-- <a href="#" class="py-2 px-3 transition-all ease-in-out duration-300 bg-yellow-500 text-white border-2 border-white hover:bg-white hover:text-yellow-500 hover:border-yellow-500 text-sm rounded font-bold">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></a> -->
+                            </div>
                         </div>
-                    </div>
                 </div>
                 <div class="rounded-lg shadow-xl">
-                    <div style="background-image: url('https://placehold.co/600x400')" class="h-60 bg-cover bg-center rounded-t-lg">
+                <div style="background-image: url({{asset('images/top-updates-2.jpg')}})" class="h-60 bg-cover bg-center rounded-t-lg">
                         
-                    </div>
-                    <div class="p-4">
-                        <div class="text-lg text-green-700 font-bold mb-3">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
-                        <div class="text-sm mb-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam blanditiis voluptatibus quidem quis dicta ipsam labore quo voluptates reprehenderit nostrum atque similique exercitationem excepturi optio, asperiores maxime et ipsum.
                         </div>
-                        <div>
-                            <a href="#" class="py-2 px-3 transition-all ease-in-out duration-300 bg-yellow-500 text-white border-2 border-white hover:bg-white hover:text-yellow-500 hover:border-yellow-500 text-sm rounded font-bold">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        <div class="p-4">
+                        <div class="authoer-date-post"><span class="text-xs">Author: <strong>ANA RONA SUPAPO</strong>&nbsp;</span><br>
+                        <span class="text-gray text-xs">Date posted: 17 January 2024</span></div>
+                            <div class="text-lg text-green-700 font-bold mb-3">𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡, 𝗖𝗢𝗟𝗠𝗘𝗥𝗦! 📣</div>
+                            <div class="text-sm mb-3">
+                            𝗖𝗔𝗦𝗧𝗜𝗡𝗚 𝗖𝗔𝗟𝗟: 𝗖𝗢𝗟𝗠 𝗦𝘁𝘂𝗱𝗲𝗻𝘁 𝗔𝗺𝗯𝗮𝘀𝘀𝗮𝗱𝗼𝗿𝘀 🎤
+                            Do you have the charisma and confidence as a proud student of the College of Our Lady of Mercy of Pulilan Foundation Inc.? We're on the hunt for the next face of our Marketing Department, someone with an infectious personality to represent our institution at exciting career talks in different schools!
+                            ...
+                            </div>
+                            <div>
+                                <a href="https://www.facebook.com/colmpulilan" class="py-2 px-3 transition-all ease-in-out duration-300 bg-yellow-500 text-white border-2 border-white hover:bg-white hover:text-yellow-500 hover:border-yellow-500 text-sm rounded font-bold">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            </div>
                         </div>
-                    </div>
                 </div>
                 <div class="rounded-lg shadow-xl">
-                    <div style="background-image: url('https://placehold.co/600x400')" class="h-60 bg-cover bg-center rounded-t-lg">
+                    <div style="background-image: url({{asset('images/top-updates-3.jpg')}})" class="h-60 bg-cover bg-center rounded-t-lg">
                         
                     </div>
                     <div class="p-4">
-                        <div class="text-lg text-green-700 font-bold mb-3">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                        <div class="authoer-date-post"><span class="text-xs">Author: <strong>ANA RONA SUPAPO</strong>&nbsp;</span><br>
+                        <span class="text-gray text-xs">Date posted: 17 January 2024</span></div>
+                        <div class="text-lg text-green-700 font-bold mb-3">Join the glamorous Great Gatsby Masquerade at COLMERS College Night!</div>
                         <div class="text-sm mb-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam blanditiis voluptatibus quidem quis dicta ipsam labore quo voluptates reprehenderit nostrum atque similique exercitationem excepturi optio, asperiores maxime et ipsum.
-                        </div>
+                        Join the glamorous Great Gatsby Masquerade at COLMERS College Night! Cross-dressing is totally cool—just check out the picture for some awesome ideas. And guess what? There's more fun stuff coming your way, so... </div>
                         <div>
-                            <a href="#" class="py-2 px-3 transition-all ease-in-out duration-300 bg-yellow-500 text-white border-2 border-white hover:bg-white hover:text-yellow-500 hover:border-yellow-500 text-sm rounded font-bold">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/colmpulilan" class="py-2 px-3 transition-all ease-in-out duration-300 bg-yellow-500 text-white border-2 border-white hover:bg-white hover:text-yellow-500 hover:border-yellow-500 text-sm rounded font-bold">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -218,8 +234,13 @@
                         if (events.length > 0) {
                             // Create a string with event titles
                             const eventTitles = events.map((event) => {
-                                return `<div onClick="openModal(${event.id})" class="border border-gray-500 p-1 md:p-2 mb-1 cursor-pointer">${event.title}</div>`;
+                                // return `<div onClick="openModal(${event.id})" class="border border-gray-500 p-1 md:p-2 mb-1 cursor-pointer">${event.title}</div>`;
+                                td.setAttribute('onClick',`openModal(${event.id})`);
+                                td.style.cursor = 'pointer';
                             }).join('');
+                            td.style.boxShadow = 'inset 0px 0px 20px 13px #065f46';
+                         
+                            td.style.color = 'white';
                             tdContent = tdContent + '<br>' + eventTitles;
                         }
                     }

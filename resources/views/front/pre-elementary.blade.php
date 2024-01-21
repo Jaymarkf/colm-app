@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="programs-content mt-[50px]">
+    <div class="programs-content mt-[50px]" style="background-image:url({{asset('images/programs-bg.jpg')}});background-size:cover;background-repeat:no-repeat;" loading="lazy" alt="pragment-background-image">
         <div class="card-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <a href="#" class="pc-img-a">
                 <img class="rounded-t-lg" src="{{asset('images/elem-1.jpg')}}" loading="lazy" alt="image"/>
