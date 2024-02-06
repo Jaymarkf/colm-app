@@ -239,7 +239,6 @@
                                 td.style.cursor = 'pointer';
                             }).join('');
                             td.style.boxShadow = 'inset 0px 0px 20px 13px #065f46';
-                         
                             td.style.color = 'white';
                             tdContent = tdContent + '<br>' + eventTitles;
                         }

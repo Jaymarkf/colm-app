@@ -58,9 +58,10 @@
                 arrows:true,
                 dots:true,
                 adaptiveHeight:true,
+                mobileFirst: true,
                 responsive: [
                     {
-                        breakpoint: 1920, // screen width from 1024px and below
+                        breakpoint: 1024, // screen width from 1024px and below
                         settings: {
                             slidesToShow: 3,
                             slidesToScroll: 1,

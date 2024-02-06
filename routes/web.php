@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminServer;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QRCodeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,7 @@ Route::get('/joenn-test', function () {
 Route::get('/', function () {
     return view('front.homepage');
 })->name('home.show');
+
 
 
 Route::get('/school-profile', function () {
@@ -88,3 +91,11 @@ Route::get('tesda', function () {
     return view('front.tesda');
 });
 /*--------END OF PROGRAMS-------*/
+
+
+/*----QR CODE ****/
+
+Route::get('/qr-code',function(){
+    return view('qr-code');
+}); 
+Route::get('/qr-code/brochure',[QRCodeController::class,'GenerateStatic']);
