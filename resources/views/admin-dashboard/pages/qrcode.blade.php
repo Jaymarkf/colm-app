@@ -151,4 +151,14 @@
 
 
     </script>
+    <script>
+$(document).ready(function(){
+   $('[hamburger]').click(function(){
+        $('.content-nav-mobile').slideToggle();
+   });
+   $('.nav-account').click(function(){
+    $('.nav-account-dropdown').slideToggle();
+   });
+});
+</script>
 </html>
