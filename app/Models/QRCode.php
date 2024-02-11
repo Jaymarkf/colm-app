@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class QRCode extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['filename'];
 }

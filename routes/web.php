@@ -46,8 +46,12 @@ Route::get('admin-dashboard', function () {
     return view('admin-dashboard');
 })->middleware('auth_admin');
 
-Route::get('manage_carousel', [AdminServer::class, 'show'])->middleware('auth_admin');
+Route::get('/manage_qr_code',[QRCodeController::class,'index'])->name('qrcode.index')->middleware('auth_admin');
+Route::post('/manage_qr_code/add',[QRCodeController::class,'store'])->name('qrcode.store')->middleware('auth_admin');
+Route::post('/manage_qr_code/edit',[QRCodeController::class,'edit'])->name('qrcode.edit')->middleware('auth_admin');
+Route::delete('/manage_qr_code/{id}',[QRCodeController::class,'destroy'])->name('qrcode.delete')->middleware('auth_admin');
 
+Route::get('manage_carousel', [AdminServer::class, 'show'])->middleware('auth_admin');
 Route::post('admin', [AdminServer::class, 'edit'])->middleware('auth_admin');
 Route::post('admin/delete', [AdminServer::class, 'delete'])->middleware('auth_admin');
 //post mnethod
@@ -93,9 +97,8 @@ Route::get('tesda', function () {
 /*--------END OF PROGRAMS-------*/
 
 
-/*----QR CODE ****/
+/*----QR CODE CLIENT ****/
 
-Route::get('/qr-code',function(){
-    return view('qr-code');
-}); 
+Route::get('/qr-code',[QRCodeController::class,'client_qrcode']); 
+
 Route::get('/qr-code/brochure',[QRCodeController::class,'GenerateStatic']);
