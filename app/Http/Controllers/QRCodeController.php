@@ -94,9 +94,9 @@ class QRCodeController extends Controller
             $id_delete->delete();
 
             DB::commit();
-            redirect()->back()->with('del_succes','item was deleted');
+            return redirect()->route('qrcode.index');
         } catch (\Exception $e) {
-            redirect()->back()->with('error',$e);
+            return redirect()->route('qrcode.index');
         }
     }
 }

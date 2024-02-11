@@ -13,6 +13,9 @@
                 <li class="text-gray-700 text-center py-2 font-bold">
                     <a href="{{ route('events.index') }}">Manage Event</a>
                 </li>
+                <li class="text-gray-700 text-center py-2 font-bold">
+                    <a href="{{ route('qrcode.index') }}">Manage QRCode</a>
+                </li>
             </ul>
         </div>
     </nav>

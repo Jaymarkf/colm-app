@@ -22,5 +22,15 @@
 <a href="/qr-code/brochure" target="_blank" class="button block text-center mt-2 text-2xl font-bold text-white bg-emerald-500 max-w-max px-8 py-2 mx-auto rounded-md">CLICK HERE</a>
 
 <script src="{{ mix('js/app.js') }}"></script> 
+<script>
+$(document).ready(function(){
+   $('[hamburger]').click(function(){
+        $('.content-nav-mobile').slideToggle();
+   });
+   $('.nav-account').click(function(){
+    $('.nav-account-dropdown').slideToggle();
+   });
+});
+</script>
 </body>
 </html>
