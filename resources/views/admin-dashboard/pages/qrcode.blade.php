@@ -31,6 +31,10 @@
         <div class="flex flex-col w-full overflow-hidden rounded-md border-gray-300 border-2">
             <div class="c-qrcode-header w-full bg-emerald-600 text-white font-bold py-2 px-4 flex justify-between"><span class="text-xs md:text-sm">MANAGE QRCODE</span><button id="add_qr" class="rounded-sm py-1 px-4 bg-green-800 text-xs md:text-sm"><i class="fa fa-plus-circle"></i> ADD IMAGE</button></div>
             <div class="container-qrcode-form p-2 w-full">
+            <form id="formDeleted" method="POST">
+                    @csrf
+                    @method('DELETE')
+            </form>
             <table id="myTable" class="display w-full">
                 <thead>
                     <tr>
@@ -39,19 +43,21 @@
                         <th class="w-1/3">Action</th>
                     </tr>
                 </thead>
+                
                 <tbody>
                     @foreach($qrCode as $data)
                     <tr>
                         <td class="w-1/3 text-center">page {{$loop->index + 1}}</td>
                         <td class="w-1/3"><img src="{{ asset('storage/qr_images/' . $data['filename']) }}" class="min-h-[90px] max-h-[90px]" loading="lazy" alt="qr-image" data-image-id="{{$data['id']}}"></td>
                         <td class="w-1/3 text-center">
-                            <button id="edit-qr" onclick="editQr(this)" data-edit-qr="{{$data['id']}}"  class="btn-edit bg-emerald-600 py-2  min-w-[56px] rounded-sm text-white text-xs m-2">edit</button>
+                            <span id="edit-qr" onclick="editQr(this)" data-edit-qr="{{$data['id']}}"  class="btn-edit px-[14px] bg-emerald-600 py-2  min-w-[56px] rounded-sm text-white text-xs m-2">edit</span>
                             <a id="delete-qr" onclick="deleteItem({{$data['id']}})" class="btn-delete bg-red-600 py-2 px-[14px] min-w-[56px] rounded-sm text-white text-xs m-2">delete</button>
                         </td>
                     </tr>
                     @endforeach
                     <!-- Add more rows as needed -->
                 </tbody>
+         
             </table>
             </div>
         </div>
@@ -136,33 +142,12 @@
         $('#error_msg').text('Select image file');
     }
     function deleteItem(id) {
-    if (confirm('Are you sure you want to delete this item?')) {
-        fetch("{{ route('qrcode.delete', ['id' => ':id']) }}".replace(':id', id), {
-            method: 'DELETE',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}', // Add CSRF token if required
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                // Optionally, you can handle successful deletion here
-                console.log('Item deleted successfully');
-                // Redirect to a different page if needed
-                window.location.href = "{{ route('qrcode.index') }}";
-            } else {
-                console.error('Error deleting item');
-                // Handle error cases if needed
-            }
-        })
-        .catch(error => {
-            console.error('Network error:', error);
-            // Handle network errors or exceptions
-        });
-    } else {
-        //delete canceled
+        const deleteForm = document.getElementById("formDeleted");
+        deleteForm.action = `{{ route('qrcode.delete') }}/${id}`;
+        if (confirm("Are you sure you want to delete this image?")) {
+            deleteForm.submit();
+        }
     }
-}
 
 
     </script>

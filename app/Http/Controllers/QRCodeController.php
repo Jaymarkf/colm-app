@@ -86,7 +86,7 @@ class QRCodeController extends Controller
         }
 
     }
-    function destroy(Request $request, $id){
+    function destroy($id){
           try {
             DB::beginTransaction();
             $id_delete = QRCode::find($id);
@@ -94,9 +94,9 @@ class QRCodeController extends Controller
             $id_delete->delete();
 
             DB::commit();
-            return response()->json(['success_deleted'=>'item was deleted']);
+            redirect()->back()->with('del_succes','item was deleted');
         } catch (\Exception $e) {
-          return response()->json(['error'=>$e]);
+            redirect()->back()->with('error',$e);
         }
     }
 }
