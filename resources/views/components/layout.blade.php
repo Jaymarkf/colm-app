@@ -57,26 +57,31 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             const currDate = new Date();
-            const getDate = new Date(localStorage.getItem('modal-date'));
+            const storedDate = new Date(localStorage.getItem('modal-date'));
+            console.log(currDate);
+            console.log(storedDate);
 
-            if (getDate < currDate) {
+            // Check if stored date is not available or if it's more than 3 days old
+            if (!storedDate || (currDate - storedDate) > 3 * 24 * 60 * 60 * 1000) {
                 setTimeout(() => {
                     $('body').addClass('modal-open');
                     $('.form-modal').addClass('modal-show');
                     $('.modal-window').addClass('modal-window-show')
+
                 }, 2000);
             }
         });
 
-        $('.close-modal').on('click', function() {
+        $('.close-modal').on('click', function () {
             $('body').removeClass('modal-open');
-            $('.form-modal').removeClass('modal-show');
-            $('.modal-window').removeClass('modal-window-show')
+            $('.modal').removeClass('modal-show');
+
+            // Set the expiration date to 3 days from the current date
             let currDate = new Date();
-            currDate.setDate(currDate.getDate() + 7);
-            localStorage.setItem('modal-date', currDate);
+            currDate.setDate(currDate.getDate() + 3);
+            localStorage.setItem('modal-date', currDate.toISOString());
         });
     </script>
 
@@ -88,6 +93,7 @@
      Request::path() == 'college' OR 
      Request::path() == 'tesda')
         <script>AOS.init();</script>
+        
     @endif
 </body>
 

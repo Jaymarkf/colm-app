@@ -38,9 +38,10 @@
                 Connect with us!
             </div>
             <div class="text-4xl">
-                <a class="text-gray-500 hover:text-gray-600 transition-colors ease-in-out duration-300" href="#"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
-                <a class="text-gray-500 hover:text-gray-600 transition-colors ease-in-out duration-300" href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                <a class="text-gray-500 hover:text-gray-600 transition-colors ease-in-out duration-300" href="#"><i class="fab fa-twitter-square" aria-hidden="true"></i></a>
+                <a class="text-gray-500 hover:text-gray-600 transition-colors ease-in-out duration-300" href="https://www.facebook.com/colmpulilan" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                <a class="text-gray-500 hover:text-gray-600 transition-colors ease-in-out duration-300" href="https://www.instagram.com/colmpulilan/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a class="text-gray-500 hover:text-gray-600 transition-colors ease-in-out duration-300" href="https://twitter.com/colmpulilan" target="_blank"><i class="fab fa-twitter-square" aria-hidden="true"></i></a>
+                <a class="text-gray-500 hover:text-gray-600 transition-colors ease-in-out duration-300" href="https://www.youtube.com/@colmpulilan8073" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
             </div>
         </div>
         <div class="col-span-12 md:col-span-4">
