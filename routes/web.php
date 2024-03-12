@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminServer;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRCodeController;
 
@@ -67,6 +68,10 @@ Route::post('calendar-events/add', [EventController::class, 'store'])->name('eve
 Route::get('calendar-events/{eventId?}', [EventController::class, 'edit'])->name('events.edit')->middleware('auth_admin');
 Route::put('calendar-events/{eventId?}', [EventController::class, 'update'])->name('events.update')->middleware('auth_admin');
 Route::delete('calendar-events/{eventId?}', [EventController::class, 'destroy'])->name('events.destroy')->middleware('auth_admin');
+
+Route::get('home-images', [HomePageController::class, 'manage_images_index'])->name('images.index')->middleware('auth_admin');
+Route::get('home-images/{id?}', [HomePageController::class, 'manage_images_edit'])->name('images.edit')->middleware('auth_admin');
+Route::put('home-images/{id?}', [HomePageController::class, 'updated_image'])->name('images.update')->middleware('auth_admin');
 
 Route::get('events/{mode?}/{date?}', [EventController::class, 'api_get'])->name('events.apiget');
 
