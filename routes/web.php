@@ -102,3 +102,7 @@ Route::get('tesda', function () {
 Route::get('/qr-code',[QRCodeController::class,'client_qrcode']); 
 
 Route::get('/qr-code/brochure',[QRCodeController::class,'GenerateStatic']);
+/** ONLINE ENROLLMENT FORM */
+Route::get('/enroll',function(){
+    return view('enroll');
+});

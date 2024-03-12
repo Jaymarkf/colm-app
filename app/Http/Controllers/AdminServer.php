@@ -87,7 +87,7 @@ class AdminServer extends Controller
        return $sql;
     }
     function update(Request $request){
-        if($request->file()){
+        if($request->file()){ 
             $imageExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd','webp'];
             $image = $request->file("banner_file");
             $image_name = $image->getClientOriginalName();
@@ -167,4 +167,5 @@ class AdminServer extends Controller
        CarouselBanner::where('id',$id)->delete();
        return 'success';
     }
+
 }
