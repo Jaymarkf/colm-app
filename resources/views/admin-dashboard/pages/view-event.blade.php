@@ -34,7 +34,7 @@
     <div class="container">
         <div class="content">
             <div class="mb-3">
-                <a href="{{ route('events.update') }}" class="bg-gray-500 px-2 py-1 text-white text-xs rounded">Back</a>
+                <a href="{{ route('events.index') }}" class="bg-gray-500 px-2 py-1 text-white text-xs rounded">Back</a>
             </div>
             <h1 class="cal-ev-heading">Viewing: {{ $event->title }}</h1>
             <form action="{{ route('events.update') }}/{{ $event->id }}" enctype="multipart/form-data" method="POST">
